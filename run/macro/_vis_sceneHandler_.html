@@ -1,0 +1,64 @@
+<html><head><title>Commands in /vis/sceneHandler/</title></head>
+<style>     table,table td,table th {        border:1px solid #eee     }     table td,table th {       padding:5px 20px;       line-height:1.3;       text-align:inherit     }     a {       color:#17a81a;       text-decoration:none;       transition-duration:0.3s     }       a:hover {       color:#17a81a     }     table {       border-collapse:collapse;       border-spacing:0;       margin-bottom:5px;     }     h1 {       font-size:2.25em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h2 {       font-size:1.5em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h3 {       color:#26282a;       font-weight:300;       font-size:1.3em;       padding:15px 0 15px 0;       border-bottom:2px #eee solid;       word-wrap:break-word     }     .sidebar {       display:block;       position:relative;       position:sticky;       float:left;       -webkit-box-sizing:border-box;       -moz-box-sizing:border-box;       -ms-box-sizing:border-box;       box-sizing:border-box;       width:20%;       padding-right:20px     }     .context {     width:80%;     display:inline-block;     background-color:#fff;     padding: 25px 35px 20px 30px;     -webkit-box-sizing:border-box;     -moz-box-sizing:border-box;     -ms-box-sizing:border-box;     box-sizing:border-box   }     </style>
+<body bgcolor="#ffffff">
+<div class="sidebar"><h2><a href="_vis_.html">Top level </a></h2><table><tr><td><a href="_vis_ASCIITree_.html">/vis/ASCIITree/</a><tr><td><a href="_vis_filtering_.html">/vis/filtering/</a><tr><td><a href="_vis_gMocren_.html">/vis/gMocren/</a><tr><td><a href="_vis_geometry_.html">/vis/geometry/</a><tr><td><a href="_vis_modeling_.html">/vis/modeling/</a><tr><td><a href="_vis_multithreading_.html">/vis/multithreading/</a><tr><td><a href="_vis_ogl_.html">/vis/ogl/</a><tr><td><a href="_vis_plotter_.html">/vis/plotter/</a><tr><td><a href="_vis_scene_.html">/vis/scene/</a><tr><td><a href="_vis_sceneHandler_.html">/vis/sceneHandler/</a><tr><td><a href="_vis_set_.html">/vis/set/</a><tr><td><a href="_vis_touchable_.html">/vis/touchable/</a><tr><td><a href="_vis_viewer_.html">/vis/viewer/</a></table></div>
+<div class="context"><h1>/vis/sceneHandler/</h1>
+Operations on Geant4 scene handlers.<br>
+<h2>Commands </h2>
+<table>
+<tr><td><a href="#c0">attach</a></td></tr>
+<tr><td><a href="#c1">create</a></td></tr>
+<tr><td><a href="#c2">list</a></td></tr>
+<tr><td><a href="#c3">select</a></td></tr>
+</table>
+<h3 id="c0">attach [<i>scene-name</i>]</h3>
+<p>
+Attaches scene to current scene handler.<br>
+If scene-name is omitted, current scene is attached.  To see scenes and
+scene handlers, use "/vis/scene/list" and "/vis/sceneHandler/list"<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>scene-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c1">create [<i>graphics-system-name</i>] [<i>scene-handler-name</i>]</h3>
+<p>
+Creates an scene handler for a specific graphics system.<br>
+Attaches current scene, if any.  (You can change attached scenes with
+"/vis/sceneHandler/attach".)  Invents a scene handler name if not
+supplied.  This scene handler becomes current.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>graphics-system-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td>Parameter candidates : NO_UI_SESSION ASCIITree ATree DAWNFILE RayTracer RT VRML2FILE gMocrenFile TOOLSSG_OFFSCREEN TSG_OFFSCREEN TSG_FILE OpenGLImmediateX OGLIX OGLI OpenGLStoredX OGLSX OGLS TOOLSSG_X11_GLES TSG_X11_GLES TSGX11 TSG OGL TOOLSSG_X11_ZB TSG_X11_ZB TSGX11ZB TSGZB
+<tr><td>scene-handler-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c2">list [<i>scene-handler-name</i>] [<i>verbosity</i>]</h3>
+<p>
+Lists scene handler(s).<br>
+"help /vis/verbose" for definition of verbosity.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>scene-handler-name
+<td>type s
+<td>Omittable : default value = all
+<td><tr><td>verbosity
+<td>type s
+<td>Omittable : default value = warnings
+<td></table>
+<h3 id="c3">select [<i>scene-handler-name</i>]</h3>
+<p>
+Selects a scene handler.<br>
+Makes the scene handler current.  "/vis/sceneHandler/list" to see
+ possible scene handler names.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>scene-handler-name
+<td>type s
+<td><td></table>
+</div></body></html>

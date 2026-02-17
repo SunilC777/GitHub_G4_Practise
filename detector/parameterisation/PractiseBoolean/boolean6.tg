@@ -1,0 +1,28 @@
+:rotm r000 0 0 0
+
+:solid WorldBox BOX 500 500 500
+:volu worldVol WorldBox G4_AIR
+:vis worldVol OFF
+
+:solid OuterBox BOX 140 140 140
+:solid InnerBox BOX 110 110 130
+:solid Frame SUBTRACTION OuterBox InnerBox r000 0 0 0
+:volu frameVol Frame G4_STAINLESS-STEEL
+:color frameVol 0.7 0.7 0.7
+:place frameVol 0 worldVol r000 -180 0 0
+
+:solid CapCyl TUBE 0 40 70
+:solid CapBox BOX 40 40 40
+:solid Capsule UNION CapCyl CapBox r000 0 0 70
+:volu capVol Capsule G4_Al
+:color capVol 0.9 0.6 0.2
+:place capVol 0 worldVol r000 0 0 0
+
+:solid TileBox BOX 120 60 10
+:solid TileCyl TUBE 0 80 12
+:solid Tile INTERSECTION TileBox TileCyl r000 0 0 0
+:volu tileVol Tile G4_PLASTIC_SC_VINYLTOLUENE
+:color tileVol 0.2 0.9 0.2
+:place tileVol 0 worldVol r000 180 0 0
+
+

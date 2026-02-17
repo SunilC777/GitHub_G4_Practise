@@ -1,0 +1,209 @@
+<html><head><title>Commands in /vis/geometry/set/</title></head>
+<style>     table,table td,table th {        border:1px solid #eee     }     table td,table th {       padding:5px 20px;       line-height:1.3;       text-align:inherit     }     a {       color:#17a81a;       text-decoration:none;       transition-duration:0.3s     }       a:hover {       color:#17a81a     }     table {       border-collapse:collapse;       border-spacing:0;       margin-bottom:5px;     }     h1 {       font-size:2.25em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h2 {       font-size:1.5em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h3 {       color:#26282a;       font-weight:300;       font-size:1.3em;       padding:15px 0 15px 0;       border-bottom:2px #eee solid;       word-wrap:break-word     }     .sidebar {       display:block;       position:relative;       position:sticky;       float:left;       -webkit-box-sizing:border-box;       -moz-box-sizing:border-box;       -ms-box-sizing:border-box;       box-sizing:border-box;       width:20%;       padding-right:20px     }     .context {     width:80%;     display:inline-block;     background-color:#fff;     padding: 25px 35px 20px 30px;     -webkit-box-sizing:border-box;     -moz-box-sizing:border-box;     -ms-box-sizing:border-box;     box-sizing:border-box   }     </style>
+<body bgcolor="#ffffff">
+<div class="sidebar"><h2><a href="_vis_geometry_.html">Top level </a></h2><table><tr><td><a href="_vis_geometry_set_.html">/vis/geometry/set/</a></table></div>
+<div class="context"><h1>/vis/geometry/set/</h1>
+Set vis attributes of Geant4 geometry.<br>
+<h2>Commands </h2>
+<table>
+<tr><td><a href="#c0">colour</a></td></tr>
+<tr><td><a href="#c1">daughtersInvisible</a></td></tr>
+<tr><td><a href="#c2">forceAuxEdgeVisible</a></td></tr>
+<tr><td><a href="#c3">forceCloud</a></td></tr>
+<tr><td><a href="#c4">forceLineSegmentsPerCircle</a></td></tr>
+<tr><td><a href="#c5">forceSolid</a></td></tr>
+<tr><td><a href="#c6">forceWireframe</a></td></tr>
+<tr><td><a href="#c7">lineStyle</a></td></tr>
+<tr><td><a href="#c8">lineWidth</a></td></tr>
+<tr><td><a href="#c9">visibility</a></td></tr>
+</table>
+<h3 id="c0">colour [<i>logical-volume-name</i>] [<i>depth</i>] [<i>red</i>] [<i>green</i>] [<i>blue</i>] [<i>opacity</i>]</h3>
+<p>
+Sets colour of logical volume(s).<br>
+"all" sets all logical volumes.<br>
+Optionally propagates down hierarchy to given depth.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>logical-volume-name
+<td>type s
+<td>Omittable : default value = all
+<td><tr><td>depth
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>red
+<td>type s
+<td>Omittable : default value = 1.
+<td><tr><td>green
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>blue
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>opacity
+<td>type d
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c1">daughtersInvisible [<i>logical-volume-name</i>] [<i>depth</i>] [<i>daughtersInvisible</i>]</h3>
+<p>
+Makes daughters of logical volume(s) invisible.<br>
+"all" sets all logical volumes.<br>
+Optionally propagates down hierarchy to given depth.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>logical-volume-name
+<td>type s
+<td>Omittable : default value = all
+<td><tr><td>depth
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>daughtersInvisible
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c2">forceAuxEdgeVisible [<i>logical-volume-name</i>] [<i>depth</i>] [<i>forceAuxEdgeVisible</i>]</h3>
+<p>
+Forces auxiliary (soft) edges of logical volume(s) to be visible,
+regardless of the view parameters.<br>
+"all" sets all logical volumes.<br>
+Optionally propagates down hierarchy to given depth.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>logical-volume-name
+<td>type s
+<td>Omittable : default value = all
+<td><tr><td>depth
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>forceAuxEdgeVisible
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c3">forceCloud [<i>logical-volume-name</i>] [<i>depth</i>] [<i>forceCloud</i>] [<i>nPoints</i>]</h3>
+<p>
+Forces logical volume(s) always to be drawn as a cloud of points,
+regardless of the view parameters.<br>
+"all" sets all logical volumes.<br>
+Optionally propagates down hierarchy to given depth.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>logical-volume-name
+<td>type s
+<td>Omittable : default value = all
+<td><tr><td>depth
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>forceCloud
+<td>type b
+<td>Omittable : default value = 1
+<td><tr><td>nPoints
+<td>type d
+<td>Omittable : default value = 0
+<td></table>
+<h3 id="c4">forceLineSegmentsPerCircle [<i>logical-volume-name</i>] [<i>depth</i>] [<i>lineSegmentsPerCircle</i>]</h3>
+<p>
+Forces number of line segments per circle, the precision with which a
+curved line or surface is represented by a polygon or polyhedron,
+regardless of the view parameters.<br>
+"all" sets all logical volumes.<br>
+Optionally propagates down hierarchy to given depth.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>logical-volume-name
+<td>type s
+<td>Omittable : default value = all
+<td><tr><td>depth
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>lineSegmentsPerCircle
+<td>type d
+<td>Omittable : default value = 0
+<td></table>
+<h3 id="c5">forceSolid [<i>logical-volume-name</i>] [<i>depth</i>] [<i>force</i>]</h3>
+<p>
+Forces logical volume(s) always to be drawn solid (surface drawing),
+regardless of the view parameters.<br>
+"all" sets all logical volumes.<br>
+Optionally propagates down hierarchy to given depth.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>logical-volume-name
+<td>type s
+<td>Omittable : default value = all
+<td><tr><td>depth
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>force
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c6">forceWireframe [<i>logical-volume-name</i>] [<i>depth</i>] [<i>forceWireframe</i>]</h3>
+<p>
+Forces logical volume(s) always to be drawn as wireframe,
+regardless of the view parameters.<br>
+"all" sets all logical volumes.<br>
+Optionally propagates down hierarchy to given depth.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>logical-volume-name
+<td>type s
+<td>Omittable : default value = all
+<td><tr><td>depth
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>forceWireframe
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c7">lineStyle [<i>logical-volume-name</i>] [<i>depth</i>] [<i>lineStyle</i>]</h3>
+<p>
+Sets line style of logical volume(s) drawing.<br>
+"all" sets all logical volumes.<br>
+Optionally propagates down hierarchy to given depth.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>logical-volume-name
+<td>type s
+<td>Omittable : default value = all
+<td><tr><td>depth
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>lineStyle
+<td>type s
+<td>Omittable : default value = unbroken
+<td>Parameter candidates : unbroken dashed dotted
+</table>
+<h3 id="c8">lineWidth [<i>logical-volume-name</i>] [<i>depth</i>] [<i>lineWidth</i>]</h3>
+<p>
+Sets line width of logical volume(s) drawing.<br>
+"all" sets all logical volumes.<br>
+Optionally propagates down hierarchy to given depth.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>logical-volume-name
+<td>type s
+<td>Omittable : default value = all
+<td><tr><td>depth
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>lineWidth
+<td>type d
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c9">visibility [<i>logical-volume-name</i>] [<i>depth</i>] [<i>visibility</i>]</h3>
+<p>
+Sets visibility of logical volume(s).<br>
+"all" sets all logical volumes.<br>
+Optionally propagates down hierarchy to given depth.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>logical-volume-name
+<td>type s
+<td>Omittable : default value = all
+<td><tr><td>depth
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>visibility
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+</div></body></html>

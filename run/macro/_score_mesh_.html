@@ -1,0 +1,105 @@
+<html><head><title>Commands in /score/mesh/</title></head>
+<style>     table,table td,table th {        border:1px solid #eee     }     table td,table th {       padding:5px 20px;       line-height:1.3;       text-align:inherit     }     a {       color:#17a81a;       text-decoration:none;       transition-duration:0.3s     }       a:hover {       color:#17a81a     }     table {       border-collapse:collapse;       border-spacing:0;       margin-bottom:5px;     }     h1 {       font-size:2.25em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h2 {       font-size:1.5em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h3 {       color:#26282a;       font-weight:300;       font-size:1.3em;       padding:15px 0 15px 0;       border-bottom:2px #eee solid;       word-wrap:break-word     }     .sidebar {       display:block;       position:relative;       position:sticky;       float:left;       -webkit-box-sizing:border-box;       -moz-box-sizing:border-box;       -ms-box-sizing:border-box;       box-sizing:border-box;       width:20%;       padding-right:20px     }     .context {     width:80%;     display:inline-block;     background-color:#fff;     padding: 25px 35px 20px 30px;     -webkit-box-sizing:border-box;     -moz-box-sizing:border-box;     -ms-box-sizing:border-box;     box-sizing:border-box   }     </style>
+<body bgcolor="#ffffff">
+<div class="sidebar"><h2><a href="_score_.html">Top level </a></h2><table><tr><td><a href="_score_create_.html">/score/create/</a><tr><td><a href="_score_mesh_.html">/score/mesh/</a><tr><td><a href="_score_probe_.html">/score/probe/</a><tr><td><a href="_score_colorMap_.html">/score/colorMap/</a><tr><td><a href="_score_quantity_.html">/score/quantity/</a><tr><td><a href="_score_filter_.html">/score/filter/</a></table></div>
+<div class="context"><h1>/score/mesh/</h1>
+    Mesh processing commands.<br>
+<h2>Sub-directories </h2><table><tr><td><a href="_score_mesh_translate_.html">/score/mesh/translate/</a></td><td>Mesh translation commands.</tr><tr><td><a href="_score_mesh_rotate_.html">/score/mesh/rotate/</a></td><td>Mesh rotation commands.</tr></table>
+<h2>Commands </h2>
+<table>
+<tr><td><a href="#c0">boxSize</a></td></tr>
+<tr><td><a href="#c1">cylinderSize</a></td></tr>
+<tr><td><a href="#c2">cylinderRMin</a></td></tr>
+<tr><td><a href="#c3">cylinderAngles</a></td></tr>
+<tr><td><a href="#c4">nBin</a></td></tr>
+</table>
+<h3 id="c0">boxSize [<i>Di</i>] [<i>Dj</i>] [<i>Dk</i>] [<i>Unit</i>]</h3>
+<p>
+Define size of the scoring mesh.<br>
+Dx  Dy  Dz  unit<br>
+<p>Range : Di&gt;0. &amp;&amp; Dj&gt;0. &amp;&amp; Dk&gt;0.
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>Di
+<td>type d
+<td><td><tr><td>Dj
+<td>type d
+<td><td><tr><td>Dk
+<td>type d
+<td><td><tr><td>Unit
+<td>type s
+<td>Omittable : default value = mm
+<td>Parameter candidates : pc km m cm mm um nm Ang fm parsec kilometer meter centimeter millimeter micrometer nanometer angstrom fermi
+</table>
+<h3 id="c1">cylinderSize [<i>R</i>] [<i>Dz</i>] [<i>unit</i>]</h3>
+<p>
+Define size of the scoring mesh.<br>
+R   Dz  unit<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>R
+<td>type d
+<td><td>Parameter range : R&gt;0
+<tr><td>Dz
+<td>type d
+<td><td>Parameter range : Dz&gt;0
+<tr><td>unit
+<td>type s
+<td>Omittable : default value = mm
+<td>Parameter candidates : pc km m cm mm um nm Ang fm parsec kilometer meter centimeter millimeter micrometer nanometer angstrom fermi
+</table>
+<h3 id="c2">cylinderRMin [<i>RMin</i>] [<i>Unit</i>]</h3>
+<p>
+Define the inner radius of the tube mesh.<br>
+This command is not needed for cylinder mesh<br>
+<p>Range : RMin&gt;=0.
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>RMin
+<td>type d
+<td><td><tr><td>Unit
+<td>type s
+<td>Omittable : default value = mm
+<td>Parameter candidates : pc km m cm mm um nm Ang fm parsec kilometer meter centimeter millimeter micrometer nanometer angstrom fermi
+</table>
+<h3 id="c3">cylinderAngles [<i>startPhi</i>] [<i>deltaPhi</i>] [<i>unit</i>]</h3>
+<p>
+Define starting angle and span for tube segment mesh.<br>
+This command is not needed for cylinder mesh<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>startPhi
+<td>type d
+<td><td><tr><td>deltaPhi
+<td>type d
+<td><td>Parameter range : deltaPhi&gt;0.
+<tr><td>unit
+<td>type s
+<td>Omittable : default value = deg
+<td>Parameter candidates : rad mrad deg radian milliradian degree
+</table>
+<h3 id="c4">nBin [<i>Ni</i>] [<i>Nj</i>] [<i>Nk</i>]</h3>
+<p>
+Define segments of the scoring mesh.<br>
+[usage] /score/mesh/nBin<br>
+ In case of boxMesh, parameters are given in<br>
+   Ni  :(int) Number of bins i (in x-axis) <br>
+   Nj  :(int) Number of bins j (in y-axis) <br>
+   Nk  :(int) Number of bins k (in z-axis) <br>
+ In case of cylinderMesh, parameters are given in<br>
+   Nr  :(int) Number of bins in radial axis <br>
+   Nz  :(int) Number of bins in z axis <br>
+   Nphi:(int) Number of bins in phi axis <br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>Ni
+<td>type i
+<td><td>Parameter range : Ni&gt;0
+<tr><td>Nj
+<td>type i
+<td><td>Parameter range : Nj&gt;0
+<tr><td>Nk
+<td>type i
+<td><td>Parameter range : Nk&gt;0
+</table>
+</div></body></html>

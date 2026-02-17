@@ -1,0 +1,18 @@
+:volu world BOX 5*m 5*m 5*m G4_Galactic
+:vis world OFF
+
+# Rotation matrix
+:rotm WaterRot 0 0 0
+
+# Solid (half x, half y, half z)
+:solid WaterSolid BOX 10*cm 10*cm 10*cm
+
+# Logical volume
+:volu WaterVol WaterSolid G4_WATER
+
+# Color applies to volume
+:color WaterVol 0.0 0.4 1.0
+
+# Place volume in world
+:place WaterVol 1 world WaterRot 0 0 0
+

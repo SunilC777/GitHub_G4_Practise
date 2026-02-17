@@ -1,0 +1,149 @@
+<html><head><title>Commands in /vis/touchable/set/</title></head>
+<style>     table,table td,table th {        border:1px solid #eee     }     table td,table th {       padding:5px 20px;       line-height:1.3;       text-align:inherit     }     a {       color:#17a81a;       text-decoration:none;       transition-duration:0.3s     }       a:hover {       color:#17a81a     }     table {       border-collapse:collapse;       border-spacing:0;       margin-bottom:5px;     }     h1 {       font-size:2.25em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h2 {       font-size:1.5em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h3 {       color:#26282a;       font-weight:300;       font-size:1.3em;       padding:15px 0 15px 0;       border-bottom:2px #eee solid;       word-wrap:break-word     }     .sidebar {       display:block;       position:relative;       position:sticky;       float:left;       -webkit-box-sizing:border-box;       -moz-box-sizing:border-box;       -ms-box-sizing:border-box;       box-sizing:border-box;       width:20%;       padding-right:20px     }     .context {     width:80%;     display:inline-block;     background-color:#fff;     padding: 25px 35px 20px 30px;     -webkit-box-sizing:border-box;     -moz-box-sizing:border-box;     -ms-box-sizing:border-box;     box-sizing:border-box   }     </style>
+<body bgcolor="#ffffff">
+<div class="sidebar"><h2><a href="_vis_touchable_.html">Top level </a></h2><table><tr><td><a href="_vis_touchable_set_.html">/vis/touchable/set/</a></table></div>
+<div class="context"><h1>/vis/touchable/set/</h1>
+Set vis attributes of current touchable.<br>
+<h2>Commands </h2>
+<table>
+<tr><td><a href="#c0">colour</a></td></tr>
+<tr><td><a href="#c1">daughtersInvisible</a></td></tr>
+<tr><td><a href="#c2">forceAuxEdgeVisible</a></td></tr>
+<tr><td><a href="#c3">forceCloud</a></td></tr>
+<tr><td><a href="#c4">forceSolid</a></td></tr>
+<tr><td><a href="#c5">forceWireframe</a></td></tr>
+<tr><td><a href="#c6">lineSegmentsPerCircle</a></td></tr>
+<tr><td><a href="#c7">lineStyle</a></td></tr>
+<tr><td><a href="#c8">lineWidth</a></td></tr>
+<tr><td><a href="#c9">numberOfCloudPoints</a></td></tr>
+<tr><td><a href="#c10">visibility</a></td></tr>
+</table>
+<h3 id="c0">colour [<i>red</i>] [<i>green</i>] [<i>blue</i>] [<i>opacity</i>]</h3>
+<p>
+Set colour of current touchable.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+Accepts (a) RGB triplet. e.g., ".3 .4 .5", or
+ (b) string such as "white", "black", "grey", "red"...or
+ (c) an additional number for opacity, e.g., ".3 .4 .5 .6"
+     or "grey ! ! .6" (note "!"'s for unused parameters).<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>red
+<td>type s
+<td>Omittable : default value = 1.
+<td><tr><td>green
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>blue
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>opacity
+<td>type d
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c1">daughtersInvisible [<i>daughtersInvisible</i>]</h3>
+<p>
+Daughters of current touchable invisible: true/false.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>daughtersInvisible
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c2">forceAuxEdgeVisible [<i>forceAuxEdgeVisible</i>]</h3>
+<p>
+Force auxiliary (soft) edges of current touchable to be visible: true/false.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>forceAuxEdgeVisible
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c3">forceCloud [<i>force</i>]</h3>
+<p>
+Force current touchable always to be drawn as a cloud.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>force
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c4">forceSolid [<i>force</i>]</h3>
+<p>
+Force current touchable always to be drawn solid (surface drawing).<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>force
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c5">forceWireframe [<i>forceWireframe</i>]</h3>
+<p>
+Force current touchable always to be drawn as wireframe.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>forceWireframe
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c6">lineSegmentsPerCircle [<i>lineSegmentsPerCircle</i>]</h3>
+<p>
+For current touchable, set number of line segments per circle, the
+precision with which a curved line or surface is represented by a
+polygon or polyhedron, regardless of the view parameters.
+Negative to pick up G4Polyhedron default value.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>lineSegmentsPerCircle
+<td>type i
+<td>Omittable : default value = 0
+<td></table>
+<h3 id="c7">lineStyle [<i>lineStyle</i>]</h3>
+<p>
+Set line style of current touchable drawing.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>lineStyle
+<td>type s
+<td>Omittable : default value = unbroken
+<td>Parameter candidates : unbroken dashed dotted
+</table>
+<h3 id="c8">lineWidth [<i>lineWidth</i>]</h3>
+<p>
+Set line width of current touchable.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>lineWidth
+<td>type d
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c9">numberOfCloudPoints [<i>numberOfCloudPoints</i>]</h3>
+<p>
+For current touchable, set number of cloud points for cloud drawing.
+&lt;= 0 means under control of viewer.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>numberOfCloudPoints
+<td>type i
+<td>Omittable : default value = 0
+<td></table>
+<h3 id="c10">visibility [<i>visibility</i>]</h3>
+<p>
+Set visibility of current touchable: true/false.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>visibility
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+</div></body></html>

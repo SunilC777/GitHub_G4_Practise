@@ -1,0 +1,508 @@
+<html><head><title>Commands in /vis/viewer/</title></head>
+<style>     table,table td,table th {        border:1px solid #eee     }     table td,table th {       padding:5px 20px;       line-height:1.3;       text-align:inherit     }     a {       color:#17a81a;       text-decoration:none;       transition-duration:0.3s     }       a:hover {       color:#17a81a     }     table {       border-collapse:collapse;       border-spacing:0;       margin-bottom:5px;     }     h1 {       font-size:2.25em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h2 {       font-size:1.5em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h3 {       color:#26282a;       font-weight:300;       font-size:1.3em;       padding:15px 0 15px 0;       border-bottom:2px #eee solid;       word-wrap:break-word     }     .sidebar {       display:block;       position:relative;       position:sticky;       float:left;       -webkit-box-sizing:border-box;       -moz-box-sizing:border-box;       -ms-box-sizing:border-box;       box-sizing:border-box;       width:20%;       padding-right:20px     }     .context {     width:80%;     display:inline-block;     background-color:#fff;     padding: 25px 35px 20px 30px;     -webkit-box-sizing:border-box;     -moz-box-sizing:border-box;     -ms-box-sizing:border-box;     box-sizing:border-box   }     </style>
+<body bgcolor="#ffffff">
+<div class="sidebar"><h2><a href="_vis_.html">Top level </a></h2><table><tr><td><a href="_vis_ASCIITree_.html">/vis/ASCIITree/</a><tr><td><a href="_vis_filtering_.html">/vis/filtering/</a><tr><td><a href="_vis_gMocren_.html">/vis/gMocren/</a><tr><td><a href="_vis_geometry_.html">/vis/geometry/</a><tr><td><a href="_vis_modeling_.html">/vis/modeling/</a><tr><td><a href="_vis_multithreading_.html">/vis/multithreading/</a><tr><td><a href="_vis_ogl_.html">/vis/ogl/</a><tr><td><a href="_vis_plotter_.html">/vis/plotter/</a><tr><td><a href="_vis_scene_.html">/vis/scene/</a><tr><td><a href="_vis_sceneHandler_.html">/vis/sceneHandler/</a><tr><td><a href="_vis_set_.html">/vis/set/</a><tr><td><a href="_vis_touchable_.html">/vis/touchable/</a><tr><td><a href="_vis_viewer_.html">/vis/viewer/</a></table></div>
+<div class="context"><h1>/vis/viewer/</h1>
+Operations on Geant4 viewers.<br>
+<h2>Sub-directories </h2><table><tr><td><a href="_vis_viewer_default_.html">/vis/viewer/default/</a></td><td>Set default values for future viewers.</tr><tr><td><a href="_vis_viewer_set_.html">/vis/viewer/set/</a></td><td>Set view parameters of current viewer.</tr></table>
+<h2>Commands </h2>
+<table>
+<tr><td><a href="#c0">addCutawayPlane</a></td></tr>
+<tr><td><a href="#c1">centreAndZoomInOn</a></td></tr>
+<tr><td><a href="#c2">centreOn</a></td></tr>
+<tr><td><a href="#c3">changeCutawayPlane</a></td></tr>
+<tr><td><a href="#c4">clear</a></td></tr>
+<tr><td><a href="#c5">clearCutawayPlanes</a></td></tr>
+<tr><td><a href="#c6">clearTransients</a></td></tr>
+<tr><td><a href="#c7">clearVisAttributesModifiers</a></td></tr>
+<tr><td><a href="#c8">clone</a></td></tr>
+<tr><td><a href="#c9">colourByDensity</a></td></tr>
+<tr><td><a href="#c10">copyViewFrom</a></td></tr>
+<tr><td><a href="#c11">create</a></td></tr>
+<tr><td><a href="#c12">dolly</a></td></tr>
+<tr><td><a href="#c13">dollyTo</a></td></tr>
+<tr><td><a href="#c14">flush</a></td></tr>
+<tr><td><a href="#c15">interpolate</a></td></tr>
+<tr><td><a href="#c16">list</a></td></tr>
+<tr><td><a href="#c17">pan</a></td></tr>
+<tr><td><a href="#c18">panTo</a></td></tr>
+<tr><td><a href="#c19">rebuild</a></td></tr>
+<tr><td><a href="#c20">refresh</a></td></tr>
+<tr><td><a href="#c21">reset</a></td></tr>
+<tr><td><a href="#c22">resetCameraParameters</a></td></tr>
+<tr><td><a href="#c23">save</a></td></tr>
+<tr><td><a href="#c24">scale</a></td></tr>
+<tr><td><a href="#c25">scaleTo</a></td></tr>
+<tr><td><a href="#c26">select</a></td></tr>
+<tr><td><a href="#c27">update</a></td></tr>
+<tr><td><a href="#c28">zoom</a></td></tr>
+<tr><td><a href="#c29">zoomTo</a></td></tr>
+</table>
+<h3 id="c0">addCutawayPlane [<i>x</i>] [<i>y</i>] [<i>z</i>] [<i>unit</i>] [<i>nx</i>] [<i>ny</i>] [<i>nz</i>]</h3>
+<p>
+Add cutaway plane to current viewer.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>x
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>y
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>z
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = m
+<td><tr><td>nx
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>ny
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>nz
+<td>type d
+<td>Omittable : default value = 0
+<td></table>
+<h3 id="c1">centreAndZoomInOn [<i>pv-name</i>] [<i>copy-no</i>]</h3>
+<p>
+Centre and zoom in on the given physical volume.<br>
+The names of all volumes in all worlds are matched against pv-name. If
+copy-no is supplied, it matches the copy number too. If pv-name is of the
+form "/regexp/", where regexp is a regular expression (see C++ regex),
+the match uses the usual rules of regular expression matching.
+Otherwise an exact match is required.
+For example, "/Shap/" matches "Shape1" and "Shape2".<br>
+It may help to see a textual representation of the geometry hierarchy of
+the worlds. Try "/vis/drawTree [worlds]"<br>
+If there are more than one matching physical volumes they will all be
+included. If this is not what you want, and what you want is to centre on a
+particular touchable, then select the touchable ("/vis/set/touchable") and
+use "/vis/touchable/centreOn". (You may need "/vis/touchable/findPath".)<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>pv-name
+<td>type s
+<td><td><tr><td>copy-no
+<td>type i
+<td>Omittable : default value = -1
+<td></table>
+<h3 id="c2">centreOn [<i>pv-name</i>] [<i>copy-no</i>]</h3>
+<p>
+Centre the view on the given physical volume.<br>
+The names of all volumes in all worlds are matched against pv-name. If
+copy-no is supplied, it matches the copy number too. If pv-name is of the
+form "/regexp/", where regexp is a regular expression (see C++ regex),
+the match uses the usual rules of regular expression matching.
+Otherwise an exact match is required.
+For example, "/Shap/" matches "Shape1" and "Shape2".<br>
+It may help to see a textual representation of the geometry hierarchy of
+the worlds. Try "/vis/drawTree [worlds]"<br>
+If there are more than one matching physical volumes they will all be
+included. If this is not what you want, and what you want is to centre on a
+particular touchable, then select the touchable ("/vis/set/touchable") and
+use "/vis/touchable/centreOn". (You may need "/vis/touchable/findPath".)<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>pv-name
+<td>type s
+<td><td><tr><td>copy-no
+<td>type i
+<td>Omittable : default value = -1
+<td></table>
+<h3 id="c3">changeCutawayPlane [<i>index</i>] [<i>x</i>] [<i>y</i>] [<i>z</i>] [<i>unit</i>] [<i>nx</i>] [<i>ny</i>] [<i>nz</i>]</h3>
+<p>
+Change cutaway plane.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>index
+<td>type i
+<td><td><tr><td>x
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>y
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>z
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = m
+<td><tr><td>nx
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>ny
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>nz
+<td>type d
+<td>Omittable : default value = 0
+<td></table>
+<h3 id="c4">clear [<i>viewer-name</i>]</h3>
+<p>
+Clears viewer.<br>
+By default, clears current viewer.  Specified viewer becomes current.
+"/vis/viewer/list" to see  possible viewer names.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>viewer-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c5">clearCutawayPlanes</h3>
+<p>
+Clear cutaway planes of current viewer.<br>
+<p>Available at all Geant4 states.
+<h3 id="c6">clearTransients [<i>viewer-name</i>]</h3>
+<p>
+Clears transients from viewer.<br>
+By default, operates on current viewer.  Specified viewer becomes current.
+"/vis/viewer/list" to see  possible viewer names.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>viewer-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c7">clearVisAttributesModifiers</h3>
+<p>
+Clear vis attribute modifiers of current viewer.<br>
+(These are used for touchables, etc.)<br>
+<p>Available at all Geant4 states.
+<h3 id="c8">clone [<i>original-viewer-name</i>] [<i>clone-name</i>]</h3>
+<p>
+Clones viewer.<br>
+By default, clones current viewer.  Clone becomes current.
+Clone name, if not provided, is derived from the original name.
+"/vis/viewer/list" to see  possible viewer names.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>original-viewer-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td><tr><td>clone-name
+<td>type s
+<td>Omittable : default value = none
+<td></table>
+<h3 id="c9">colourByDensity [<i>n</i>] [<i>unit</i>] [<i>d0</i>] [<i>d1</i>] [<i>d2</i>]</h3>
+<p>
+If a volume has no vis attributes, colour it by density.<br>
+Provide algorithm number, e.g., "1" (or "0" to switch off).
+Then a unit of density, e.g., "g/cm3".
+Then parameters for the algorithm assumed to be densities in that unit.<br>
+Algorithm 1: Simple algorithm takes 3 parameters: d0, d1 and d2.
+  Volumes with density &lt; d0 are invisible.
+  Volumes with d0 &lt;= density &lt; d1 have colour on range red-&gt;green.
+  Volumes with d1 &lt;= density &lt; d2 have colour on range green-&gt;blue.
+  Volumes with density &gt; d2 are blue.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>n
+<td>type i
+<td>Omittable : default value = 1
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = g/cm3
+<td><tr><td>d0
+<td>type d
+<td>Omittable : default value = 0.5
+<td><tr><td>d1
+<td>type d
+<td>Omittable : default value = 3
+<td><tr><td>d2
+<td>type d
+<td>Omittable : default value = 10
+<td></table>
+<h3 id="c10">copyViewFrom [<i>from-viewer-name</i>]</h3>
+<p>
+Copy the camera-specific parameters from the specified viewer.<br>
+Note: To copy ALL view parameters, including scene modifications,
+use "/vis/viewer/set/all"<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>from-viewer-name
+<td>type s
+<td><td></table>
+<h3 id="c11">create [<i>scene-handler</i>] [<i>viewer-name</i>] [<i>window-size-hint</i>]</h3>
+<p>
+Creates a viewer. If the scene handler name is specified, then a
+viewer of that scene handler is created. Otherwise, a viewer
+of the current scene handler is created.<br>
+If the viewer name is not specified a name is generated from the name
+of the scene handler and a serial number.<br>
+The scene handler and viewer become current.<br>
+(Note: the system adds the graphics system name to the viewer name
+for identification, but for selecting, copying, etc., only characters
+up to the first blank are used. For example, if the viewer name is
+"viewer-0 (G4OpenGLStoredQt)", it may be referenced by "viewer-0",
+for example in "/vis/viewer/select viewer-0".)<br>
+Window size and placement hints, e.g. 600x600-100+100 (in pixels):<br>
+- single number, e.g., "600": square window;<br>
+- two numbers, e.g., "800x600": rectangluar window;<br>
+- two numbers plus placement hint, e.g., "600x600-100+100" places window of size
+  600x600 100 pixels left and 100 pixels down from top right corner.<br>
+- If not specified, the default is "600", i.e., 600 pixels square, placed
+  at the window manager's discretion...or picked up from the previous viewer.<br>
+- This is an X-Windows-type geometry string, see:
+  https://en.wikibooks.org/wiki/Guide_to_X11/Starting_Programs,
+  "Specifying window geometry".<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>scene-handler
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td><tr><td>viewer-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td><tr><td>window-size-hint
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c12">dolly [<i>increment</i>] [<i>Unit</i>]</h3>
+<p>
+Incremental dolly.<br>
+Moves the camera incrementally towards target point.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>increment
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td><tr><td>Unit
+<td>type s
+<td>Omittable : default value = m
+<td>Parameter candidates : pc km m cm mm um nm Ang fm parsec kilometer meter centimeter millimeter micrometer nanometer angstrom fermi
+</table>
+<h3 id="c13">dollyTo [<i>distance</i>] [<i>Unit</i>]</h3>
+<p>
+Dolly to specific coordinate.<br>
+Places the camera towards target point relative to standard camera point.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>distance
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td><tr><td>Unit
+<td>type s
+<td>Omittable : default value = m
+<td>Parameter candidates : pc km m cm mm um nm Ang fm parsec kilometer meter centimeter millimeter micrometer nanometer angstrom fermi
+</table>
+<h3 id="c14">flush [<i>viewer-name</i>]</h3>
+<p>
+Compound command: "/vis/viewer/refresh" + "/vis/viewer/update".<br>
+Useful for refreshing and initiating post-processing for graphics
+systems which need post-processing.  By default, acts on current
+viewer.  "/vis/viewer/list" to see possible viewers.  Viewer
+becomes current.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>viewer-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c15">interpolate [<i>pattern</i>] [<i>no-of-points</i>] [<i>wait-time</i>] [<i>time-unit</i>] [<i>export</i>]</h3>
+<p>
+Interpolate views defined by the first argument, which can contain Unix-shell-style pattern matching characters such as '*', '?' and '[' - see "man sh" and look for "Pattern Matching". The contents of each file are assumed to be "/vis/viewer" commands that specify a particular view. The files are processed in alphanumeric order of filename. The files may be written by hand or produced by the "/vis/viewer/save" command.<br>
+The default is to search the working directory for files with a .g4view extension. Another procedure is to assemble view files in a subdirectory, e.g., "myviews"; then they can be interpolated with
+"/vis/viewer/interpolate myviews".<br>
+To export interpolated views to file for a future possible movie, write "export" as 5th parameter (OpenGL only).<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>pattern
+<td>type s
+<td>Omittable : default value = *.g4view
+<td><tr><td>no-of-points
+<td>type i
+<td>Omittable : default value = 50
+<td><tr><td>wait-time
+<td>type s
+<td>Omittable : default value = 20.
+<td><tr><td>time-unit
+<td>type s
+<td>Omittable : default value = millisecond
+<td><tr><td>export
+<td>type s
+<td>Omittable : default value = no
+<td></table>
+<h3 id="c16">list [<i>viewer-name</i>] [<i>verbosity</i>]</h3>
+<p>
+Lists viewers(s).<br>
+See "/vis/verbose" for definition of verbosity.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>viewer-name
+<td>type s
+<td>Omittable : default value = all
+<td><tr><td>verbosity
+<td>type s
+<td>Omittable : default value = warnings
+<td></table>
+<h3 id="c17">pan [<i>right-increment</i>] [<i>up-increment</i>] [<i>unit</i>]</h3>
+<p>
+Incremental pan.<br>
+Moves the camera incrementally right and up by these amounts (as seen
+from viewpoint direction).<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>right-increment
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td><tr><td>up-increment
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = m
+<td></table>
+<h3 id="c18">panTo [<i>right</i>] [<i>up</i>] [<i>unit</i>]</h3>
+<p>
+Pan to specific coordinate.<br>
+Places the camera in this position right and up relative to standard
+target point (as seen from viewpoint direction).<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>right
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td><tr><td>up
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = m
+<td></table>
+<h3 id="c19">rebuild [<i>viewer-name</i>]</h3>
+<p>
+Forces rebuild of graphical database.<br>
+By default, acts on current viewer.  "/vis/viewer/list"
+to see possible viewers.  Viewer becomes current.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>viewer-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c20">refresh [<i>viewer-name</i>]</h3>
+<p>
+Refreshes viewer.<br>
+By default, acts on current viewer.  "/vis/viewer/list"
+to see possible viewers.  Viewer becomes current.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>viewer-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c21">reset [<i>viewer-name</i>]</h3>
+<p>
+Resets viewer.<br>
+By default, acts on current viewer.  "/vis/viewer/list"
+to see possible viewers.  Viewer becomes current.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>viewer-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c22">resetCameraParameters [<i>viewer-name</i>]</h3>
+<p>
+Resets only the camera parameters.<br>
+By default, acts on current viewer.  "/vis/viewer/list"
+to see possible viewers.  Viewer becomes current.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>viewer-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c23">save [<i>filename</i>]</h3>
+<p>
+Write commands that define the current view to file.<br>
+Read them back into the same or any viewer with "/control/execute".<br>
+If the filename is omitted the view is saved to a file "g4_nn.g4view", where nn is a sequential two-digit number.<br>
+If the filename is "-", the data are written to G4cout.<br>
+If you are wanting to save views for future interpolation a recommended procedure is: save views to "g4_nn.g4view", as above, then move the files into a sub-directory, say, "views", then interpolate with"/vis/viewer/interpolate views"<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>filename
+<td>type s
+<td>Omittable : default value = 
+<td></table>
+<h3 id="c24">scale [<i>x-scale-multiplier</i>] [<i>y-scale-multiplier</i>] [<i>z-scale-multiplier</i>]</h3>
+<p>
+Incremental (non-uniform) scaling.<br>
+Multiplies components of current scaling by components of this factor.
+ Scales (x,y,z) by corresponding components of the resulting factor.<br>
+<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>x-scale-multiplier
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td><tr><td>y-scale-multiplier
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td><tr><td>z-scale-multiplier
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c25">scaleTo [<i>x-scale-factor</i>] [<i>y-scale-factor</i>] [<i>z-scale-factor</i>]</h3>
+<p>
+Absolute (non-uniform) scaling.<br>
+Scales (x,y,z) by corresponding components of this factor.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>x-scale-factor
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td><tr><td>y-scale-factor
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td><tr><td>z-scale-factor
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c26">select [<i>viewer-name</i>]</h3>
+<p>
+Selects viewer.<br>
+Specify viewer by name.  "/vis/viewer/list" to see possible viewers.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>viewer-name
+<td>type s
+<td><td></table>
+<h3 id="c27">update [<i>viewer-name</i>]</h3>
+<p>
+Triggers graphical database post-processing for viewers
+using that technique.<br>
+For such viewers the view only becomes visible with this command.
+By default, acts on current viewer.  "/vis/viewer/list"
+to see possible viewers.  Viewer becomes current.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>viewer-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c28">zoom [<i>multiplier</i>]</h3>
+<p>
+Incremental zoom.<br>
+Multiplies current magnification by this factor.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>multiplier
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c29">zoomTo [<i>factor</i>]</h3>
+<p>
+Absolute zoom.<br>
+Magnifies standard magnification by this factor.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>factor
+<td>type d
+<td>Omittable : current value is used as the default value.
+<td></table>
+</div></body></html>

@@ -26,7 +26,8 @@
 /vis/modeling/trajectories/drawByParticleID-0/default/setDrawStepPts true
 /vis/modeling/trajectories/drawByParticleID-0/default/setTimeSliceInterval 0.01 ns
 /vis/modeling/trajectories/list
-
+/vis/viewer/flush
+/vis/tsg/export
 /run/beamOn
 
 /vis/ogl/export

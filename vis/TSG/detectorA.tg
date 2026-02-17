@@ -1,0 +1,15 @@
+:volu world BOX 5*m 5*m 5*m G4_Galactic
+:vis world OFF
+
+:rotm BOX 0 0 0
+
+//Half x, Half y, Half z
+
+:solid  BOX 10*cm 10*cm 10*cm
+
+:volu  WaterBOX G4_WATER 
+
+:color BOX 1.00 0.11 0.11
+
+:place BOX 1 world BOX 0 0 0
+

@@ -1,0 +1,365 @@
+<html><head><title>Commands in /score/quantity/</title></head>
+<style>     table,table td,table th {        border:1px solid #eee     }     table td,table th {       padding:5px 20px;       line-height:1.3;       text-align:inherit     }     a {       color:#17a81a;       text-decoration:none;       transition-duration:0.3s     }       a:hover {       color:#17a81a     }     table {       border-collapse:collapse;       border-spacing:0;       margin-bottom:5px;     }     h1 {       font-size:2.25em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h2 {       font-size:1.5em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h3 {       color:#26282a;       font-weight:300;       font-size:1.3em;       padding:15px 0 15px 0;       border-bottom:2px #eee solid;       word-wrap:break-word     }     .sidebar {       display:block;       position:relative;       position:sticky;       float:left;       -webkit-box-sizing:border-box;       -moz-box-sizing:border-box;       -ms-box-sizing:border-box;       box-sizing:border-box;       width:20%;       padding-right:20px     }     .context {     width:80%;     display:inline-block;     background-color:#fff;     padding: 25px 35px 20px 30px;     -webkit-box-sizing:border-box;     -moz-box-sizing:border-box;     -ms-box-sizing:border-box;     box-sizing:border-box   }     </style>
+<body bgcolor="#ffffff">
+<div class="sidebar"><h2><a href="_score_.html">Top level </a></h2><table><tr><td><a href="_score_create_.html">/score/create/</a><tr><td><a href="_score_mesh_.html">/score/mesh/</a><tr><td><a href="_score_probe_.html">/score/probe/</a><tr><td><a href="_score_colorMap_.html">/score/colorMap/</a><tr><td><a href="_score_quantity_.html">/score/quantity/</a><tr><td><a href="_score_filter_.html">/score/filter/</a></table></div>
+<div class="context"><h1>/score/quantity/</h1>
+Scoring quantity of the mesh.<br>
+<h2>Sub-directories </h2><table><tr><td><a href="_score_quantity_get_.html">/score/quantity/get/</a></td><td>...Title not available...</tr><tr><td><a href="_score_quantity_set_.html">/score/quantity/set/</a></td><td>...Title not available...</tr></table>
+<h2>Commands </h2>
+<table>
+<tr><td><a href="#c0">touch</a></td></tr>
+<tr><td><a href="#c1">energyDeposit</a></td></tr>
+<tr><td><a href="#c2">cellCharge</a></td></tr>
+<tr><td><a href="#c3">cellFlux</a></td></tr>
+<tr><td><a href="#c4">passageCellFlux</a></td></tr>
+<tr><td><a href="#c5">doseDeposit</a></td></tr>
+<tr><td><a href="#c6">nOfStep</a></td></tr>
+<tr><td><a href="#c7">nOfSecondary</a></td></tr>
+<tr><td><a href="#c8">trackLength</a></td></tr>
+<tr><td><a href="#c9">passageCellCurrent</a></td></tr>
+<tr><td><a href="#c10">passageTrackLength</a></td></tr>
+<tr><td><a href="#c11">flatSurfaceCurrent</a></td></tr>
+<tr><td><a href="#c12">flatSurfaceFlux</a></td></tr>
+<tr><td><a href="#c13">volumeFlux</a></td></tr>
+<tr><td><a href="#c14">nOfCollision</a></td></tr>
+<tr><td><a href="#c15">population</a></td></tr>
+<tr><td><a href="#c16">nOfTrack</a></td></tr>
+<tr><td><a href="#c17">nOfTerminatedTrack</a></td></tr>
+<tr><td><a href="#c18">minKinEAtGeneration</a></td></tr>
+<tr><td><a href="#c19">stepChecker</a></td></tr>
+</table>
+<h3 id="c0">touch [<i>qname</i>]</h3>
+<p>
+Assign previously defined quantity to the current quantity.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td></table>
+<h3 id="c1">energyDeposit [<i>qname</i>] [<i>unit</i>]</h3>
+<p>
+Energy deposit scorer.<br>
+[usage] /score/quantity/energyDeposit qname unit<br>
+  qname  :(String) scorer name<br>
+  unit   :(String) unit<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>unit
+<td>type s
+<td>Omittable : default value = MeV
+<td>Parameter candidates : eV keV MeV GeV TeV PeV meV J electronvolt kiloelectronvolt megaelectronvolt gigaelectronvolt teraelectronvolt petaelectronvolt millielectronVolt joule
+</table>
+<h3 id="c2">cellCharge [<i>qname</i>] [<i>unit</i>]</h3>
+<p>
+Cell charge scorer.<br>
+[usage] /score/quantity/cellCharge qname unit<br>
+  qname  :(String) scorer name<br>
+  unit   :(String) unit<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>unit
+<td>type s
+<td>Omittable : default value = e+
+<td>Parameter candidates : e+ C eplus coulomb
+</table>
+<h3 id="c3">cellFlux [<i>qname</i>] [<i>unit</i>] [<i>scoreweighted</i>]</h3>
+<p>
+Cell flux scorer.<br>
+[usage] /score/quantity/cellFlux qname unit<br>
+  qname  :(String) scorer name<br>
+  unit   :(String) unit<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>unit
+<td>type s
+<td>Omittable : default value = percm2
+<td><tr><td>scoreweighted
+<td>type b
+<td>Omittable : default value = false
+<td></table>
+<h3 id="c4">passageCellFlux [<i>qname</i>] [<i>unit</i>]</h3>
+<p>
+Passage cell flux scorer<br>
+[usage] /score/quantity/passageCellFlux qname unit<br>
+  qname  :(String) scorer name<br>
+  unit   :(String) unit<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>unit
+<td>type s
+<td>Omittable : default value = percm2
+<td></table>
+<h3 id="c5">doseDeposit [<i>qname</i>] [<i>unit</i>]</h3>
+<p>
+Dose deposit scorer.<br>
+[usage] /score/quantity/doseDeposit qname unit<br>
+  qname  :(String) scorer name<br>
+  unit   :(String) unit<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>unit
+<td>type s
+<td>Omittable : default value = Gy
+<td>Parameter candidates : Gy gray
+</table>
+<h3 id="c6">nOfStep [<i>qname</i>] [<i>bflag</i>]</h3>
+<p>
+Number of step scorer.<br>
+[usage] /score/quantity/nOfStep qname<br>
+[usage] /score/quantity/nOfStep qname  bflag<br>
+  qname  :(String) scorer name<br>
+  bflag  :(Bool) Skip zero step <br>
+          at geometry boundary if true<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>bflag
+<td>type b
+<td>Omittable : default value = false
+<td></table>
+<h3 id="c7">nOfSecondary [<i>qname</i>]</h3>
+<p>
+Number of secondary scorer.<br>
+[usage] /score/quantity/nOfSecondary qname<br>
+  qname  :(String) scorer name<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td></table>
+<h3 id="c8">trackLength [<i>qname</i>] [<i>wflag</i>] [<i>kflag</i>] [<i>vflag</i>] [<i>unit</i>]</h3>
+<p>
+Track length scorer.<br>
+[usage] /score/quantity/trackLength qname wflag kflag vflag unit<br>
+  qname  :(String) scorer name<br>
+  wflag  :(Bool) weighted<br>
+  kflag  :(Bool) multiply kinetic energy<br>
+  vflag  :(Bool) divide by velocity<br>
+  unit   :(String) unit<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>wflag
+<td>type b
+<td>Omittable : default value = false
+<td><tr><td>kflag
+<td>type b
+<td>Omittable : default value = false
+<td><tr><td>vflag
+<td>type b
+<td>Omittable : default value = false
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = mm
+<td></table>
+<h3 id="c9">passageCellCurrent [<i>qname</i>] [<i>wflag</i>]</h3>
+<p>
+Passage cell current scorer.<br>
+[usage] /score/quantity/passageCellCurrent qname wflag<br>
+  qname  :(String) scorer name<br>
+  wflag  :(Bool) weighted<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>wflag
+<td>type b
+<td>Omittable : default value = true
+<td></table>
+<h3 id="c10">passageTrackLength [<i>qname</i>] [<i>wflag</i>] [<i>unit</i>]</h3>
+<p>
+Passage track length scorer.<br>
+[usage] /score/quantity/passageTrackLength qname wflag unit<br>
+  qname  :(String) scorer name<br>
+  wflag  :(Bool) weighted<br>
+  unit   :(Bool) unit<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>wflag
+<td>type b
+<td>Omittable : default value = true
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = mm
+<td>Parameter candidates : pc km m cm mm um nm Ang fm parsec kilometer meter centimeter millimeter micrometer nanometer angstrom fermi
+</table>
+<h3 id="c11">flatSurfaceCurrent [<i>qname</i>] [<i>dflag</i>] [<i>wflag</i>] [<i>aflag</i>] [<i>unit</i>]</h3>
+<p>
+Flat surface current Scorer.<br>
+[usage] /score/quantity/flatSurfaceCurrent qname dflag wflag aflag unit<br>
+  qname  :(String) scorer name<br>
+  dflag  :(Int) direction flag<br>
+         : 0 = Both In and Out<br>
+         : 1 = In only<br>
+         : 2 = Out only<br>
+  wflag  :(Bool) weighted<br>
+  aflag  :(Bool) divide by area<br>
+  unit   :(String) unit<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>dflag
+<td>type i
+<td>Omittable : default value = 0
+<td><tr><td>wflag
+<td>type b
+<td>Omittable : default value = true
+<td><tr><td>aflag
+<td>type b
+<td>Omittable : default value = true
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = percm2
+<td></table>
+<h3 id="c12">flatSurfaceFlux [<i>qname</i>] [<i>dflag</i>] [<i>wflag</i>] [<i>aflag</i>] [<i>unit</i>]</h3>
+<p>
+Flat surface flux scorer.<br>
+[usage] /score/quantity/flatSurfaceFlux qname dflag unit<br>
+  qname  :(String) scorer name<br>
+  dflag  :(Int) direction flag<br>
+         : 0 = Both In and Out<br>
+         : 1 = In only<br>
+         : 2 = Out only<br>
+  wflag  :(Bool) weighted<br>
+  aflag  :(Bool) divide by area<br>
+  unit   :(String) unit<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>dflag
+<td>type i
+<td>Omittable : default value = 0
+<td><tr><td>wflag
+<td>type b
+<td>Omittable : default value = true
+<td><tr><td>aflag
+<td>type b
+<td>Omittable : default value = true
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = percm2
+<td></table>
+<h3 id="c13">volumeFlux [<i>qname</i>] [<i>divcos</i>] [<i>dflag</i>]</h3>
+<p>
+Volume flux scorer.<br>
+This scorer scores the number of particles getting into the volume without normalized by the surface area.<br>
+[usage] /score/quantity/volumeFlux qname divcos dflag<br>
+  qname  :(String) scorer name<br>
+  divcos :(Bool) divide by cos(theta), where theta is the incident angle (default : false)<br>
+  dflag  :(Int) direction, 1 : inward (default), 2 : outward<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>divcos
+<td>type b
+<td>Omittable : default value = 0
+<td><tr><td>dflag
+<td>type i
+<td>Omittable : default value = 1
+<td>Parameter range : dflag&gt;=1 &amp;&amp; dflag&lt;=2
+</table>
+<h3 id="c14">nOfCollision [<i>qname</i>] [<i>wflag</i>]</h3>
+<p>
+Number of collision scorer.<br>
+[usage] /score/quantity/nOfCollision qname wflag<br>
+  qname  :(String) scorer name<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>wflag
+<td>type b
+<td>Omittable : default value = false
+<td></table>
+<h3 id="c15">population [<i>qname</i>] [<i>wflag</i>]</h3>
+<p>
+Population scorer.<br>
+[usage] /score/quantity/population qname wflag<br>
+  qname  :(String) scorer name<br>
+  wflag  :(Bool) weighted<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>wflag
+<td>type b
+<td>Omittable : default value = false
+<td></table>
+<h3 id="c16">nOfTrack [<i>qname</i>] [<i>dflag</i>] [<i>wflag</i>]</h3>
+<p>
+Number of track scorer.<br>
+[usage] /score/quantity/nOfTrack qname dflag wflag<br>
+  qname  :(String) scorer name<br>
+  dflag  :(Int) direction<br>
+         : 0 = Both In and Out<br>
+         : 1 = In only<br>
+         : 2 = Out only<br>
+  wflag  :(Bool) weighted<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>dflag
+<td>type i
+<td>Omittable : default value = 0
+<td><tr><td>wflag
+<td>type b
+<td>Omittable : default value = false
+<td></table>
+<h3 id="c17">nOfTerminatedTrack [<i>qname</i>] [<i>wflag</i>]</h3>
+<p>
+Number of terminated tracks scorer.<br>
+[usage] /score/quantity/nOfTerminatedTrack qname wflag<br>
+  qname  :(String) scorer name<br>
+  wflag  :(Bool) weighted<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>wflag
+<td>type b
+<td>Omittable : default value = false
+<td></table>
+<h3 id="c18">minKinEAtGeneration [<i>qname</i>] [<i>unit</i>]</h3>
+<p>
+Min Kinetic Energy at Generation<br>
+[usage] /score/quantity/minKinEAtGeneration qname unit<br>
+  qname  :(String) scorer name<br>
+  unit   :(String) unit name<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td><tr><td>unit
+<td>type s
+<td>Omittable : default value = MeV
+<td>Parameter candidates : eV keV MeV GeV TeV PeV meV J electronvolt kiloelectronvolt megaelectronvolt gigaelectronvolt teraelectronvolt petaelectronvolt millielectronVolt joule
+</table>
+<h3 id="c19">stepChecker [<i>qname</i>]</h3>
+<p>
+Display a comment when this PS is invoked<br>
+[usage] /score/quantity/stepChecker qname<br>
+  qname  :(String) scorer name<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>qname
+<td>type s
+<td><td></table>
+</div></body></html>

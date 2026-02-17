@@ -1,0 +1,55 @@
+:rotm r000 0 0 0
+
+# ---------------- World ----------------
+:solid WorldBox BOX 800 800 800
+:volu worldVol WorldBox G4_AIR
+:vis worldVol OFF
+
+
+# ============================================================
+# 1) SUBTRACTION: Simple detector frame (shell)
+# ============================================================
+:solid FrameOuter BOX 320 320 220
+:solid FrameInner BOX 280 280 200
+:solid FrameShell SUBTRACTION FrameOuter FrameInner r000 0 0 0
+:volu frameVol FrameShell G4_STAINLESS-STEEL
+:color frameVol 0.70 0.70 0.70
+:place frameVol 0 worldVol r000 0 0 0
+
+
+# ============================================================
+# 2) UNION: Target = cylinder + spherical cap
+# ============================================================
+:solid TargetBody TUBE 0 70 90
+:solid TargetCap  SPHERE 0 70 0 360 0 180
+:solid Target     UNION TargetBody TargetCap r000 0 0 90
+:volu targetVol Target G4_Ge
+:color targetVol 0.90 0.70 0.20
+:place targetVol 0 worldVol r000 0 0 0
+
+
+# ============================================================
+# 3) INTERSECTION: Window tile = box ∩ cylinder (rounded tile)
+# ============================================================
+:solid TileBox BOX 120 60 10
+:solid TileCyl TUBE 0 80 12
+:solid TileWindow INTERSECTION TileBox TileCyl r000 0 0 0
+:volu tileVol TileWindow G4_PLASTIC_SC_VINYLTOLUENE
+:color tileVol 0.10 0.90 0.10
+
+# Place 4 tiles around the target (simple symmetric pattern)
+:place tileVol 0 worldVol r000  220   0  0
+:place tileVol 1 worldVol r000 -220   0  0
+:place tileVol 2 worldVol r000    0  220 0
+:place tileVol 3 worldVol r000    0 -220 0
+
+
+# ---------------- Optional: simple collimator (SUBTRACTION) ----------------
+# (You can keep or remove this; it is still simple and demonstrates subtraction again)
+:solid CollOuter BOX 160 160 40
+:solid CollHole  TUBE 0 60 80
+:solid Collimator SUBTRACTION CollOuter CollHole r000 0 0 0
+:volu collVol Collimator G4_Pb
+:color collVol 0.25 0.25 0.25
+:place collVol 0 worldVol r000 0 0 260
+

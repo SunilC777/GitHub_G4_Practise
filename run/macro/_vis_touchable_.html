@@ -1,0 +1,129 @@
+<html><head><title>Commands in /vis/touchable/</title></head>
+<style>     table,table td,table th {        border:1px solid #eee     }     table td,table th {       padding:5px 20px;       line-height:1.3;       text-align:inherit     }     a {       color:#17a81a;       text-decoration:none;       transition-duration:0.3s     }       a:hover {       color:#17a81a     }     table {       border-collapse:collapse;       border-spacing:0;       margin-bottom:5px;     }     h1 {       font-size:2.25em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h2 {       font-size:1.5em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h3 {       color:#26282a;       font-weight:300;       font-size:1.3em;       padding:15px 0 15px 0;       border-bottom:2px #eee solid;       word-wrap:break-word     }     .sidebar {       display:block;       position:relative;       position:sticky;       float:left;       -webkit-box-sizing:border-box;       -moz-box-sizing:border-box;       -ms-box-sizing:border-box;       box-sizing:border-box;       width:20%;       padding-right:20px     }     .context {     width:80%;     display:inline-block;     background-color:#fff;     padding: 25px 35px 20px 30px;     -webkit-box-sizing:border-box;     -moz-box-sizing:border-box;     -ms-box-sizing:border-box;     box-sizing:border-box   }     </style>
+<body bgcolor="#ffffff">
+<div class="sidebar"><h2><a href="_vis_.html">Top level </a></h2><table><tr><td><a href="_vis_ASCIITree_.html">/vis/ASCIITree/</a><tr><td><a href="_vis_filtering_.html">/vis/filtering/</a><tr><td><a href="_vis_gMocren_.html">/vis/gMocren/</a><tr><td><a href="_vis_geometry_.html">/vis/geometry/</a><tr><td><a href="_vis_modeling_.html">/vis/modeling/</a><tr><td><a href="_vis_multithreading_.html">/vis/multithreading/</a><tr><td><a href="_vis_ogl_.html">/vis/ogl/</a><tr><td><a href="_vis_plotter_.html">/vis/plotter/</a><tr><td><a href="_vis_scene_.html">/vis/scene/</a><tr><td><a href="_vis_sceneHandler_.html">/vis/sceneHandler/</a><tr><td><a href="_vis_set_.html">/vis/set/</a><tr><td><a href="_vis_touchable_.html">/vis/touchable/</a><tr><td><a href="_vis_viewer_.html">/vis/viewer/</a></table></div>
+<div class="context"><h1>/vis/touchable/</h1>
+Operations on touchables.<br>
+<h2>Sub-directories </h2><table><tr><td><a href="_vis_touchable_set_.html">/vis/touchable/set/</a></td><td>Set vis attributes of current touchable.</tr></table>
+<h2>Commands </h2>
+<table>
+<tr><td><a href="#c0">centreAndZoomInOn</a></td></tr>
+<tr><td><a href="#c1">centreOn</a></td></tr>
+<tr><td><a href="#c2">draw</a></td></tr>
+<tr><td><a href="#c3">dump</a></td></tr>
+<tr><td><a href="#c4">extentForField</a></td></tr>
+<tr><td><a href="#c5">findPath</a></td></tr>
+<tr><td><a href="#c6">localAxes</a></td></tr>
+<tr><td><a href="#c7">showExtent</a></td></tr>
+<tr><td><a href="#c8">twinkle</a></td></tr>
+<tr><td><a href="#c9">volumeForField</a></td></tr>
+</table>
+<h3 id="c0">centreAndZoomInOn</h3>
+<p>
+Centre and zoom in on the current touchable.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+You may also need "/vis/touchable/findPath".<br>
+Use "/vis/touchable/set" to set attributes.<br>
+<p>Available at all Geant4 states.
+<h3 id="c1">centreOn</h3>
+<p>
+Centre the view on the current touchable.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+You may also need "/vis/touchable/findPath".<br>
+Use "/vis/touchable/set" to set attributes.<br>
+<p>Available at all Geant4 states.
+<h3 id="c2">draw [<i>extent</i>]</h3>
+<p>
+Draw touchable.<br>
+If parameter == true, also draw extent as a white wireframe box.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+You may also need "/vis/touchable/findPath".<br>
+Use "/vis/touchable/set" to set attributes.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>extent
+<td>type b
+<td>Omittable : default value = 0
+<td></table>
+<h3 id="c3">dump</h3>
+<p>
+Dump touchable attributes.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+You may also need "/vis/touchable/findPath".<br>
+Use "/vis/touchable/set" to set attributes.<br>
+<p>Available at all Geant4 states.
+<h3 id="c4">extentForField [<i>draw</i>]</h3>
+<p>
+Set extent for field.<br>
+If parameter == true, also draw.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+You may also need "/vis/touchable/findPath".<br>
+Use "/vis/touchable/set" to set attributes.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>draw
+<td>type b
+<td>Omittable : default value = 0
+<td></table>
+<h3 id="c5">findPath [<i>physical-volume-name</i>] [<i>copy-no</i>]</h3>
+<p>
+Prints the path to touchable and its logical volume mother
+given a physical volume name and copy no.<br>
+A search of all worlds is made and all physical volume names are
+matched against the argument of this command.  If this is of the
+form "/regexp/", where regexp is a regular expression (see C++ regex),
+the physical volume name is matched against regexp by the usual rules
+of regular expression matching. Otherwise an exact match is required.
+For example, "/Shap/" matches "Shape1" and "Shape2".<br>
+It may help to see a textual representation of the geometry hierarchy of
+the worlds. Try "/vis/drawTree [worlds]".<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>physical-volume-name
+<td>type s
+<td>Omittable : default value = world
+<td><tr><td>copy-no
+<td>type i
+<td>Omittable : default value = -1
+<td></table>
+<h3 id="c6">localAxes</h3>
+<p>
+Draw local axes.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+You may also need "/vis/touchable/findPath".<br>
+Use "/vis/touchable/set" to set attributes.<br>
+<p>Available at all Geant4 states.
+<h3 id="c7">showExtent [<i>draw</i>]</h3>
+<p>
+Print extent of touchable.<br>
+If parameter == true, also draw.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+You may also need "/vis/touchable/findPath".<br>
+Use "/vis/touchable/set" to set attributes.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>draw
+<td>type b
+<td>Omittable : default value = 0
+<td></table>
+<h3 id="c8">twinkle</h3>
+<p>
+Cause touchable to twinkle.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+You may also need "/vis/touchable/findPath".<br>
+Use "/vis/touchable/set" to set attributes.<br>
+<p>Available at all Geant4 states.
+<h3 id="c9">volumeForField [<i>draw</i>]</h3>
+<p>
+Set volume for field.<br>
+If parameter == true, also draw.<br>
+Use "/vis/set/touchable" to set current touchable.<br>
+You may also need "/vis/touchable/findPath".<br>
+Use "/vis/touchable/set" to set attributes.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>draw
+<td>type b
+<td>Omittable : default value = 0
+<td></table>
+</div></body></html>

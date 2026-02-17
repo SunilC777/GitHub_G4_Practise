@@ -1,0 +1,76 @@
+
+:rotm r000   0   0   0
+:rotm r090x 90   0   0
+:rotm r090y  0  90   0
+:rotm r180y  0 180   0
+
+# ---------------- MAIN VOLUMES (different from your example) ----------------
+# Vessel is now a tapered tank (CONE/CONS style)
+:solid vesselOuter CONE 0 260 0 200 520
+:solid vesselInner CONE 0 245 0 185 500
+:solid vesselShell SUBTRACTION vesselOuter vesselInner r000 0 0 0
+
+# Top plate now has a central opening (SUBTRACTION)
+:solid plateDisk   TUBS 0 280 25 0 360
+:solid plateHole   TUBS 0  70 30 0 360
+:solid topPlate    SUBTRACTION plateDisk plateHole r000 0 0 0
+
+# ---------------- ADVANCED MODULE (boolean composition) ----------------
+# Module head: a short polycone "dome"
+:solid modDome POLYCONE
+0 360
+5
+0   0
+35  0
+50 -25
+30 -55
+0  -55
+
+# Module body: trapezoid block (TRD)
+:solid modBody TRD 22 36 22 36 60
+
+# UNION: dome + body (shift dome upward)
+:solid modUnion UNION modBody modDome r000 0 0 75
+
+# SUBTRACTION: drill a cylindrical channel through the module
+:solid modDrill TUBS 0 10 140 0 360
+:solid modCored SUBTRACTION modUnion modDrill r090x 0 0 0
+
+# INTERSECTION: carve the module into a rounded aperture by intersecting
+# with a limiting cylinder (keeps only overlap region)
+:solid modLimit TUBS 0 55 95 0 360
+:solid module  INTERSECTION modCored modLimit r000 0 0 0
+
+
+# ---------------- WORLD + VOLUMES ----------------
+:volu world TUBS 0 600 900 0 360 G4_AIR
+:vis world OFF
+
+:volu vesselVol vesselShell G4_BRONZE
+:color vesselVol 0.82 0.55 0.22
+
+:volu plateVol topPlate G4_BRONZE
+:color plateVol 0.65 0.42 0.18
+
+:volu moduleVol module G4_BRONZE
+:color moduleVol 0.95 0.72 0.25
+
+
+# ---------------- PLACEMENTS (same "pattern style") ----------------
+# Place vessel + plate like your example but different z positions
+:place vesselVol 0 world r000 0 0 -260
+:place plateVol  0 world r000 0 0  320
+
+
+# Ring placement of 9 modules (same layout style as your PMT ring)
+# Modules are rotated sideways (r090x) so they point inward/outward direction
+:place moduleVol 0 world r090x   0     0    220
+:place moduleVol 1 world r090x  130    0    220
+:place moduleVol 2 world r090x   92    92   220
+:place moduleVol 3 world r090x   0    130   220
+:place moduleVol 4 world r090x  -92    92   220
+:place moduleVol 5 world r090x -130    0    220
+:place moduleVol 6 world r090x  -92   -92   220
+:place moduleVol 7 world r090x   0   -130   220
+:place moduleVol 8 world r090x   92   -92   220
+

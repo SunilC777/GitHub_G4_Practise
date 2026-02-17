@@ -1,0 +1,176 @@
+<html><head><title>Commands in /score/</title></head>
+<style>     table,table td,table th {        border:1px solid #eee     }     table td,table th {       padding:5px 20px;       line-height:1.3;       text-align:inherit     }     a {       color:#17a81a;       text-decoration:none;       transition-duration:0.3s     }       a:hover {       color:#17a81a     }     table {       border-collapse:collapse;       border-spacing:0;       margin-bottom:5px;     }     h1 {       font-size:2.25em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h2 {       font-size:1.5em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h3 {       color:#26282a;       font-weight:300;       font-size:1.3em;       padding:15px 0 15px 0;       border-bottom:2px #eee solid;       word-wrap:break-word     }     .sidebar {       display:block;       position:relative;       position:sticky;       float:left;       -webkit-box-sizing:border-box;       -moz-box-sizing:border-box;       -ms-box-sizing:border-box;       box-sizing:border-box;       width:20%;       padding-right:20px     }     .context {     width:80%;     display:inline-block;     background-color:#fff;     padding: 25px 35px 20px 30px;     -webkit-box-sizing:border-box;     -moz-box-sizing:border-box;     -ms-box-sizing:border-box;     box-sizing:border-box   }     </style>
+<body bgcolor="#ffffff">
+<div class="sidebar"><h2><a href="_.html">Top level </a></h2><table><tr><td><a href="_control_.html">/control/</a><tr><td><a href="_units_.html">/units/</a><tr><td><a href="_analysis_.html">/analysis/</a><tr><td><a href="_particle_.html">/particle/</a><tr><td><a href="_tracking_.html">/tracking/</a><tr><td><a href="_geometry_.html">/geometry/</a><tr><td><a href="_process_.html">/process/</a><tr><td><a href="_event_.html">/event/</a><tr><td><a href="_cuts_.html">/cuts/</a><tr><td><a href="_run_.html">/run/</a><tr><td><a href="_random_.html">/random/</a><tr><td><a href="_material_.html">/material/</a><tr><td><a href="_physics_lists_.html">/physics_lists/</a><tr><td><a href="_gps_.html">/gps/</a><tr><td><a href="_grdm_.html">/grdm/</a><tr><td><a href="_score_.html">/score/</a><tr><td><a href="_vis_.html">/vis/</a></table></div>
+<div class="context"><h1>/score/</h1>
+Interactive scoring commands.<br>
+<h2>Sub-directories </h2><table><tr><td><a href="_score_create_.html">/score/create/</a></td><td>  Mesh creation commands.</tr><tr><td><a href="_score_mesh_.html">/score/mesh/</a></td><td>    Mesh processing commands.</tr><tr><td><a href="_score_probe_.html">/score/probe/</a></td><td>Probe commands</tr><tr><td><a href="_score_colorMap_.html">/score/colorMap/</a></td><td>Color map commands.</tr><tr><td><a href="_score_quantity_.html">/score/quantity/</a></td><td>Scoring quantity of the mesh.</tr><tr><td><a href="_score_filter_.html">/score/filter/</a></td><td>  Scoring filter commands.</tr></table>
+<h2>Commands </h2>
+<table>
+<tr><td><a href="#c0">list</a></td></tr>
+<tr><td><a href="#c1">dump</a></td></tr>
+<tr><td><a href="#c2">verbose</a></td></tr>
+<tr><td><a href="#c3">open</a></td></tr>
+<tr><td><a href="#c4">close</a></td></tr>
+<tr><td><a href="#c5">drawProjection</a></td></tr>
+<tr><td><a href="#c6">drawColumn</a></td></tr>
+<tr><td><a href="#c7">dumpQuantityToFile</a></td></tr>
+<tr><td><a href="#c8">dumpQuantityWithFactor</a></td></tr>
+<tr><td><a href="#c9">dumpAllQuantitiesToFile</a></td></tr>
+<tr><td><a href="#c10">dumpAllQuantitiesWithFactor</a></td></tr>
+<tr><td><a href="#c11">fill1D</a></td></tr>
+</table>
+<h3 id="c0">list</h3>
+<p>
+List scoring worlds.<br>
+<p>Available at all Geant4 states.
+<h3 id="c1">dump</h3>
+<p>
+Dump results of scorers.<br>
+<p>Available at all Geant4 states.
+<h3 id="c2">verbose [<i></i>]</h3>
+<p>
+Verbosity.<br>
+  0) errors or warnings,<br>
+  1) information with 0)<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>
+<td>type i
+<td><td></table>
+<h3 id="c3">open [<i>MeshName</i>]</h3>
+<p>
+Open scoring mesh.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>MeshName
+<td>type s
+<td><td></table>
+<h3 id="c4">close</h3>
+<p>
+Close scoring mesh.<br>
+<p>Available at all Geant4 states.
+<h3 id="c5">drawProjection [<i>meshName</i>] [<i>psName</i>] [<i>colorMapName</i>] [<i>proj</i>]</h3>
+<p>
+Draw projection(s) of scored quantities.<br>
+Parameter &lt;proj&gt; specified which projection(s) to be drawn.<br>
+  100 : xy-plane, 010 : yz-plane,    001 : zx-plane -- default 111<br>
+  100 : N/A,      010 : z_phi-plane, 001 : r_phi-plane -- default 111<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>meshName
+<td>type s
+<td><td><tr><td>psName
+<td>type s
+<td><td><tr><td>colorMapName
+<td>type s
+<td>Omittable : default value = defaultLinearColorMap
+<td><tr><td>proj
+<td>type i
+<td>Omittable : default value = 111
+<td></table>
+<h3 id="c6">drawColumn [<i>meshName</i>] [<i>psName</i>] [<i>plane</i>] [<i>column</i>] [<i>colorMapName</i>]</h3>
+<p>
+Draw a cell column.<br>
+ plane = 0 : x-y, 1: y-z, 2: z-x  for box mesh<br>
+         0 : z-phi, 1: r-phi, 2: r-z  for cylinder mesh<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>meshName
+<td>type s
+<td><td><tr><td>psName
+<td>type s
+<td><td><tr><td>plane
+<td>type i
+<td><td>Parameter range : plane&gt;=0 &amp;&amp; plane&lt;=2
+<tr><td>column
+<td>type i
+<td><td><tr><td>colorMapName
+<td>type s
+<td>Omittable : default value = defaultLinearColorMap
+<td></table>
+<h3 id="c7">dumpQuantityToFile [<i>meshName</i>] [<i>psName</i>] [<i>fileName</i>] [<i>option</i>]</h3>
+<p>
+Dump one scored quantity to file.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>meshName
+<td>type s
+<td><td><tr><td>psName
+<td>type s
+<td><td><tr><td>fileName
+<td>type s
+<td><td><tr><td>option
+<td>type s
+<td>Omittable : default value = 
+<td></table>
+<h3 id="c8">dumpQuantityWithFactor [<i>meshName</i>] [<i>psName</i>] [<i>fileName</i>] [<i>factor</i>] [<i>option</i>]</h3>
+<p>
+Dump one scored quantity to file.<br>
+Each value is multiplied by the specified factor.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>meshName
+<td>type s
+<td><td><tr><td>psName
+<td>type s
+<td><td><tr><td>fileName
+<td>type s
+<td><td><tr><td>factor
+<td>type d
+<td><td>Parameter range : factor&gt;0.
+<tr><td>option
+<td>type s
+<td>Omittable : default value = 
+<td></table>
+<h3 id="c9">dumpAllQuantitiesToFile [<i>meshName</i>] [<i>fileName</i>] [<i>option</i>]</h3>
+<p>
+Dump all quantities of the mesh to file.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>meshName
+<td>type s
+<td><td><tr><td>fileName
+<td>type s
+<td><td><tr><td>option
+<td>type s
+<td>Omittable : default value = 
+<td></table>
+<h3 id="c10">dumpAllQuantitiesWithFactor [<i>meshName</i>] [<i>fileName</i>] [<i>factor</i>] [<i>option</i>]</h3>
+<p>
+Dump all quantities of the mesh to file.<br>
+Each value is multiplied by the specified factor.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>meshName
+<td>type s
+<td><td><tr><td>fileName
+<td>type s
+<td><td><tr><td>factor
+<td>type d
+<td><td>Parameter range : factor&gt;0.
+<tr><td>option
+<td>type s
+<td>Omittable : default value = 
+<td></table>
+<h3 id="c11">fill1D [<i>histID</i>] [<i>meshName</i>] [<i>scorerName</i>] [<i>copyNo</i>]</h3>
+<p>
+Let a primitive scorer fill 1-D histogram<br>
+Before using this command, primitive scorer must be defined and assigned.<br>
+Also before using this command, a histogram has to be defined by /analysis/h1/create command.<br>
+This command is available only for real-world volume or probe.<br>
+Please note that this command has to be applied to each copy number of the scoring volume.<br>
+If same histogram ID is used more than once, more than one scorers fill that histogram.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>histID
+<td>type i
+<td><td><tr><td>meshName
+<td>type s
+<td><td><tr><td>scorerName
+<td>type s
+<td><td><tr><td>copyNo
+<td>type i
+<td>Omittable : default value = 0
+<td></table>
+</div></body></html>

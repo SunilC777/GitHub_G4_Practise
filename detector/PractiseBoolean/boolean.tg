@@ -1,0 +1,63 @@
+:rotm r000 0 0 0
+
+:elem Iron Fe 26 55.85
+:elem Chromium Cr 24 52.00
+:elem Nickel Ni 28 58.69
+:elem Oxygen O 8 16.00
+:elem Silicon Si 14 28.0855
+
+:mixt StainlessSteel 7.9 3 Iron 0.70 Chromium 0.18 Nickel 0.12
+:mixt Vacuum 1e-25 1 Iron 1.0
+:mixt Quartz 2.2 2 Silicon 0.467 Oxygen 0.533
+:mixt Concrete 2.3 2 Oxygen 0.53 Silicon 0.47
+
+:solid WorldBox BOX 1200 1200 1600
+:volu World WorldBox Vacuum
+:vis World OFF
+
+:solid Hall BOX 1000 1000 1400
+:volu vHall Hall G4_AIR
+:color vHall 0.15 0.15 0.18
+:place vHall 0 World r000 0 0 0
+
+:solid YokeOuter BOX 700 700 500
+:solid YokeInner BOX 500 500 480
+:solid Yoke SUBTRACTION YokeOuter YokeInner r000 0 0 0
+:volu vYoke Yoke Concrete
+:color vYoke 0.35 0.35 0.35
+:place vYoke 0 vHall r000 0 0 300
+
+:solid CollBody TUBS 0 140 140 0 360
+:solid Slit BOX 25 160 40
+:solid CollA SUBTRACTION CollBody Slit r000 0 0 0
+:solid Slit2 BOX 160 25 40
+:solid Collimator SUBTRACTION CollA Slit2 r000 0 0 0
+:volu vColl Collimator StainlessSteel
+:color vColl 0.75 0.75 0.78
+:place vColl 0 vHall r000 0 0 -800
+
+:solid TrackerTube TUBS 0 220 8 0 360
+:solid TrackerHole TUBS 0 210 9 0 360
+:solid TrackerRing SUBTRACTION TrackerTube TrackerHole r000 0 0 0
+:volu vTracker TrackerRing Quartz
+:color vTracker 0.2 0.6 0.9
+:place vTracker 0 vHall r000 0 0 -250
+:place vTracker 1 vHall r000 0 0 -150
+:place vTracker 2 vHall r000 0 0 -50
+:place vTracker 3 vHall r000 0 0 50
+:place vTracker 4 vHall r000 0 0 150
+:place vTracker 5 vHall r000 0 0 250
+
+:solid CaloBlock BOX 120 120 120
+:solid CaloCore TUBS 0 50 140 0 360
+:solid CaloA SUBTRACTION CaloBlock CaloCore r000 0 0 0
+:solid Plug TUBS 0 52 40 0 360
+:solid Calo UNION CaloA Plug r000 0 0 -60
+:volu vCalo Calo StainlessSteel
+:color vCalo 0.9 0.55 0.1
+:place vCalo 0 vHall r000 0 0 900
+
+:solid TargetSphere SPHERE 0 60 0 360 0 180
+:volu vTarget TargetSphere StainlessSteel
+:color vTarget 0.6 0.9 0.3
+:place vTarget 0 vHall r000 0 0 -500

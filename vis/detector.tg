@@ -1,0 +1,17 @@
+:volu world BOX 5*m 5*m 5*m G4_Galactic
+:vis world OFF
+
+:rotm WaterBOX_rot 0 0 0
+
+//Half x, Half y, Half z
+
+:solid waterCUBE BOX 10*cm 10*cm 10*cm
+
+:volu WaterBOX waterCUBE G4_WATER
+
+:color WaterBOX 1.00 0.11 0.11
+
+:place WaterBOX 1 world WaterBOX_rot 0 0 0
+
+
+

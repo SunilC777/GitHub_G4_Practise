@@ -1,0 +1,13 @@
+/run/initialize
+/vis/verbose 6
+/vis/open VRML2FILE
+/vis/drawVolume
+/vis/viewer/refresh
+/vis/viewer/set/viewpointVector 1 1 1
+/vis/scene/add/axes
+/vis/scene/add/logo
+/vis/scene/add/scale
+/vis/scene/add/text 10 5 -10 cm  12 ! ! "Hello World"
+/vis/viewer/set/style s
+/vis/viewer/set/style c
+/vis/viewer/refresh

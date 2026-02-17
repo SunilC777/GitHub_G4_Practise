@@ -1,0 +1,43 @@
+<html><head><title>Commands in /vis/ASCIITree/</title></head>
+<style>     table,table td,table th {        border:1px solid #eee     }     table td,table th {       padding:5px 20px;       line-height:1.3;       text-align:inherit     }     a {       color:#17a81a;       text-decoration:none;       transition-duration:0.3s     }       a:hover {       color:#17a81a     }     table {       border-collapse:collapse;       border-spacing:0;       margin-bottom:5px;     }     h1 {       font-size:2.25em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h2 {       font-size:1.5em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h3 {       color:#26282a;       font-weight:300;       font-size:1.3em;       padding:15px 0 15px 0;       border-bottom:2px #eee solid;       word-wrap:break-word     }     .sidebar {       display:block;       position:relative;       position:sticky;       float:left;       -webkit-box-sizing:border-box;       -moz-box-sizing:border-box;       -ms-box-sizing:border-box;       box-sizing:border-box;       width:20%;       padding-right:20px     }     .context {     width:80%;     display:inline-block;     background-color:#fff;     padding: 25px 35px 20px 30px;     -webkit-box-sizing:border-box;     -moz-box-sizing:border-box;     -ms-box-sizing:border-box;     box-sizing:border-box   }     </style>
+<body bgcolor="#ffffff">
+<div class="sidebar"><h2><a href="_vis_.html">Top level </a></h2><table><tr><td><a href="_vis_ASCIITree_.html">/vis/ASCIITree/</a><tr><td><a href="_vis_filtering_.html">/vis/filtering/</a><tr><td><a href="_vis_gMocren_.html">/vis/gMocren/</a><tr><td><a href="_vis_geometry_.html">/vis/geometry/</a><tr><td><a href="_vis_modeling_.html">/vis/modeling/</a><tr><td><a href="_vis_multithreading_.html">/vis/multithreading/</a><tr><td><a href="_vis_ogl_.html">/vis/ogl/</a><tr><td><a href="_vis_plotter_.html">/vis/plotter/</a><tr><td><a href="_vis_scene_.html">/vis/scene/</a><tr><td><a href="_vis_sceneHandler_.html">/vis/sceneHandler/</a><tr><td><a href="_vis_set_.html">/vis/set/</a><tr><td><a href="_vis_touchable_.html">/vis/touchable/</a><tr><td><a href="_vis_viewer_.html">/vis/viewer/</a></table></div>
+<div class="context"><h1>/vis/ASCIITree/</h1>
+Commands for ASCIITree control.<br>
+<h2>Sub-directories </h2><table><tr><td><a href="_vis_ASCIITree_set_.html">/vis/ASCIITree/set/</a></td><td>Settings for ASCIITree control.</tr></table>
+<h2>Commands </h2>
+<table>
+<tr><td><a href="#c0">verbose</a></td></tr>
+</table>
+<h3 id="c0">verbose [<i>verbosity</i>]</h3>
+<p>
+  &lt;  10: notifies but does not print details of repeated volumes.<br>
+  &gt;= 10: prints all physical volumes (touchables).<br>
+The level of detail is given by verbosity%10:<br>
+  &gt;=  0: physical volume name.<br>
+  &gt;=  1: logical volume name (and names of sensitive detector and readout geometry, if any).<br>
+  &gt;=  2: solid name and type.<br>
+  &gt;=  3: volume and density.<br>
+  &gt;=  5: daughter-subtracted volume and mass.<br>
+  &gt;=  6: physical volume dump.<br>
+  &gt;=  7: polyhedron dump.<br>
+and in the summary at the end of printing:<br>
+  &gt;=  4: daughter-included mass of top physical volume(s) in scene to depth specified.<br>
+Note: by default, culling is switched off so all volumes are seen.<br>
+Note: the mass calculation takes into account daughters, which can be time consuming.  If you want the mass of a particular subtree try:<br>
+  /vis/drawTree &lt;subtree-physical-volume-name&gt;<br>
+Or if you want more control, for example:<br>
+  /vis/open ATree<br>
+  /vis/ASCIITree/verbose 14<br>
+  /vis/scene/create<br>
+  /vis/scene/add/volume &lt;subtree-physical-volume-name&gt; ! &lt;depth&gt;<br>
+  /vis/sceneHandler/attach<br>
+  /vis/viewer/flush<br>
+Note: dumping the physical volumes produces a lot of output. It is advisable to select the volume of interest, as for a sub-tree above.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>verbosity
+<td>type i
+<td>Omittable : default value = 1
+<td></table>
+</div></body></html>

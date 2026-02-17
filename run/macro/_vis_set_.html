@@ -1,0 +1,163 @@
+<html><head><title>Commands in /vis/set/</title></head>
+<style>     table,table td,table th {        border:1px solid #eee     }     table td,table th {       padding:5px 20px;       line-height:1.3;       text-align:inherit     }     a {       color:#17a81a;       text-decoration:none;       transition-duration:0.3s     }       a:hover {       color:#17a81a     }     table {       border-collapse:collapse;       border-spacing:0;       margin-bottom:5px;     }     h1 {       font-size:2.25em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h2 {       font-size:1.5em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h3 {       color:#26282a;       font-weight:300;       font-size:1.3em;       padding:15px 0 15px 0;       border-bottom:2px #eee solid;       word-wrap:break-word     }     .sidebar {       display:block;       position:relative;       position:sticky;       float:left;       -webkit-box-sizing:border-box;       -moz-box-sizing:border-box;       -ms-box-sizing:border-box;       box-sizing:border-box;       width:20%;       padding-right:20px     }     .context {     width:80%;     display:inline-block;     background-color:#fff;     padding: 25px 35px 20px 30px;     -webkit-box-sizing:border-box;     -moz-box-sizing:border-box;     -ms-box-sizing:border-box;     box-sizing:border-box   }     </style>
+<body bgcolor="#ffffff">
+<div class="sidebar"><h2><a href="_vis_.html">Top level </a></h2><table><tr><td><a href="_vis_ASCIITree_.html">/vis/ASCIITree/</a><tr><td><a href="_vis_filtering_.html">/vis/filtering/</a><tr><td><a href="_vis_gMocren_.html">/vis/gMocren/</a><tr><td><a href="_vis_geometry_.html">/vis/geometry/</a><tr><td><a href="_vis_modeling_.html">/vis/modeling/</a><tr><td><a href="_vis_multithreading_.html">/vis/multithreading/</a><tr><td><a href="_vis_ogl_.html">/vis/ogl/</a><tr><td><a href="_vis_plotter_.html">/vis/plotter/</a><tr><td><a href="_vis_scene_.html">/vis/scene/</a><tr><td><a href="_vis_sceneHandler_.html">/vis/sceneHandler/</a><tr><td><a href="_vis_set_.html">/vis/set/</a><tr><td><a href="_vis_touchable_.html">/vis/touchable/</a><tr><td><a href="_vis_viewer_.html">/vis/viewer/</a></table></div>
+<div class="context"><h1>/vis/set/</h1>
+Set quantities for use in future commands where appropriate.<br>
+<h2>Commands </h2>
+<table>
+<tr><td><a href="#c0">arrow3DLineSegmentsPerCircle</a></td></tr>
+<tr><td><a href="#c1">colour</a></td></tr>
+<tr><td><a href="#c2">extentForField</a></td></tr>
+<tr><td><a href="#c3">lineWidth</a></td></tr>
+<tr><td><a href="#c4">textColour</a></td></tr>
+<tr><td><a href="#c5">textLayout</a></td></tr>
+<tr><td><a href="#c6">textSize</a></td></tr>
+<tr><td><a href="#c7">touchable</a></td></tr>
+<tr><td><a href="#c8">volumeForField</a></td></tr>
+</table>
+<h3 id="c0">arrow3DLineSegmentsPerCircle [<i>number</i>]</h3>
+<p>
+Defines number of line segments per circle for drawing 3D arrows for future "/vis/scene/add/" commands.<br>
+<p>Range : number &gt;= 3
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>number
+<td>type i
+<td>Omittable : default value = 6
+<td></table>
+<h3 id="c1">colour [<i>red</i>] [<i>green</i>] [<i>blue</i>] [<i>alpha</i>]</h3>
+<p>
+Defines colour and opacity for future "/vis/scene/add/" commands.<br>
+(Except "/vis/scene/add/text" commands - see "/vis/set/textColour".)<br>
+Accepts (a) RGB triplet. e.g., ".3 .4 .5", or
+ (b) string such as "white", "black", "grey", "red"...or
+ (c) an additional number for opacity, e.g., ".3 .4 .5 .6"
+     or "grey ! ! .6" (note "!"'s for unused parameters).<br>
+Default: white and opaque.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>red
+<td>type s
+<td>Omittable : default value = 1.
+<td><tr><td>green
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>blue
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>alpha
+<td>type d
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c2">extentForField [<i>xmin</i>] [<i>xmax</i>] [<i>ymin</i>] [<i>ymax</i>] [<i>zmin</i>] [<i>zmax</i>] [<i>unit</i>]</h3>
+<p>
+Sets an extent for future "/vis/scene/add/*Field" commands.<br>
+The default is a null extent, which is interpreted by the commands as the
+extent of the whole scene.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>xmin
+<td>type d
+<td><td><tr><td>xmax
+<td>type d
+<td><td><tr><td>ymin
+<td>type d
+<td><td><tr><td>ymax
+<td>type d
+<td><td><tr><td>zmin
+<td>type d
+<td><td><tr><td>zmax
+<td>type d
+<td><td><tr><td>unit
+<td>type s
+<td><td></table>
+<h3 id="c3">lineWidth [<i>lineWidth</i>]</h3>
+<p>
+Defines line width for future "/vis/scene/add/" commands.
+See "/vis/viewer/set/lineWidth" for more information.<br>
+<p>Range : lineWidth &gt;= 1.
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>lineWidth
+<td>type d
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c4">textColour [<i>red</i>] [<i>green</i>] [<i>blue</i>] [<i>alpha</i>]</h3>
+<p>
+Defines colour and opacity for future "/vis/scene/add/text" commands.<br>
+Accepts (a) RGB triplet. e.g., ".3 .4 .5", or
+ (b) string such as "white", "black", "grey", "red"...or
+ (c) an additional number for opacity, e.g., ".3 .4 .5 .6"
+     or "grey ! ! .6" (note "!"'s for unused parameters).<br>
+Default: blue and opaque.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>red
+<td>type s
+<td>Omittable : default value = 0.
+<td><tr><td>green
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>blue
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>alpha
+<td>type d
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c5">textLayout [<i>layout</i>]</h3>
+<p>
+Defines layout future "/vis/scene/add/text" commands.<br>
+"left" (default) for left justification to provided coordinate.<br>
+"centre" or "center" for text centered on provided coordinate.<br>
+"right" for right justification to provided coordinate.<br>
+Default: left.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>layout
+<td>type s
+<td>Omittable : default value = left
+<td>Parameter candidates : left centre center right
+</table>
+<h3 id="c6">textSize [<i>textSize</i>]</h3>
+<p>
+Defines text size (pixels) for future "/vis/scene/add/" commands.<br>
+<p>Range : textSize &gt;= 8.
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>textSize
+<td>type d
+<td>Omittable : default value = 12
+<td></table>
+<h3 id="c7">touchable [<i>list</i>]</h3>
+<p>
+Defines touchable for future "/vis/touchable/set/" commands.<br>
+Please provide a list of space-separated physical volume names and
+copy number pairs starting at the world volume, e.g:
+  /vis/set/touchable World 0 Envelope 0 Shape1 0
+(To get list of touchables, use "/vis/drawTree")
+(To save, use "/vis/viewer/save")<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>list
+<td>type s
+<td>Omittable : default value = 
+<td></table>
+<h3 id="c8">volumeForField [<i>physical-volume-name</i>] [<i>copy-no</i>] [<i>draw</i>]</h3>
+<p>
+Sets a volume for "/vis/scene/add/*Field" commands.<br>
+Takes a volume name or a /regular expression/ -- see guidance for
+"/vis/drawVolume"<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>physical-volume-name
+<td>type s
+<td><td><tr><td>copy-no
+<td>type i
+<td>Omittable : default value = -1
+<td><tr><td>draw
+<td>type b
+<td>Omittable : default value = 0
+<td></table>
+</div></body></html>

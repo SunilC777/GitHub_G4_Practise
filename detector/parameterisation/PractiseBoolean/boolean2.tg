@@ -1,0 +1,46 @@
+:rotm r000 0 0 0
+
+:solid WorldBox BOX 1200 1200 1200
+:volu worldVol WorldBox G4_AIR
+:vis worldVol OFF
+
+:solid FrameOuter BOX 450 450 450
+:solid FrameInner BOX 380 380 440
+:solid Frame SUBTRACTION FrameOuter FrameInner r000 0 0 0
+:volu frameVol Frame G4_STAINLESS-STEEL
+:color frameVol 0.7 0.7 0.7
+:place frameVol 0 worldVol r000 0 0 0
+
+:solid CoreBox BOX 250 250 250
+:volu coreVol CoreBox G4_WATER
+:color coreVol 0.2 0.4 0.9
+:place coreVol 0 worldVol r000 0 0 0
+
+:solid CollOuter BOX 320 320 40
+:solid CollHole BOX 180 180 80
+:solid Collimator SUBTRACTION CollOuter CollHole r000 0 0 0
+:volu collVol Collimator G4_Pb
+:color collVol 0.2 0.2 0.2
+:place collVol 0 worldVol r000 0 0 520
+
+:solid TileBase BOX 90 90 10
+:solid TileCut BOX 60 20 20
+:solid TileWin INTERSECTION TileBase TileCut r000 0 0 0
+:volu tileVol TileWin G4_PLASTIC_SC_VINYLTOLUENE
+:color tileVol 0.1 0.9 0.1
+
+:place tileVol 0 worldVol r000  420   0    0
+:place tileVol 1 worldVol r000 -420   0    0
+:place tileVol 2 worldVol r000    0  420   0
+:place tileVol 3 worldVol r000    0 -420   0
+:place tileVol 4 worldVol r000  420  420   0
+:place tileVol 5 worldVol r000 -420  420   0
+:place tileVol 6 worldVol r000  420 -420   0
+:place tileVol 7 worldVol r000 -420 -420   0
+
+:solid PipeOuter TUBE 0 45 260
+:solid PipeInner TUBE 0 35 270
+:solid Pipe SUBTRACTION PipeOuter PipeInner r000 0 0 0
+:volu pipeVol Pipe G4_Al
+:color pipeVol 0.75 0.75 0.85
+:place pipeVol 0 worldVol r000 0 0 -520

@@ -1,0 +1,40 @@
+:rotm r000 0 0 0
+
+:solid vessel TUBE 0 200 400
+:solid topPlate TUBE 0 200 20
+
+:solid pmtBulb POLYCONE
+0 360
+4
+0   0
+30  0
+40 -40
+0  -40
+
+:solid pmtStem TUBE 0 8 40
+:solid pmt UNION pmtBulb pmtStem r000 0 0 -60
+
+:volu vesselVol vessel G4_BRONZE
+:color vesselVol 0.7 0.7 0.7
+
+:volu plateVol topPlate G4_BRONZE
+:color plateVol 0.4 0.4 0.4
+
+:volu pmtVol pmt G4_BRONZE
+:color pmtVol 1.0 0.8 0.0
+
+:volu world TUBE 0 350 600 G4_AIR
+:vis world OFF
+
+:place vesselVol 0 world r000 0 0 -200
+:place plateVol  0 world r000 0 0 220
+
+:place pmtVol  0 world r000 0 0 200
+:place pmtVol  1 world r000 80 0 200
+:place pmtVol  2 world r000 56.6 56.6 200
+:place pmtVol  3 world r000 0 80 200
+:place pmtVol  4 world r000 -56.6 56.6 200
+:place pmtVol  5 world r000 -80 0 200
+:place pmtVol  6 world r000 -56.6 -56.6 200
+:place pmtVol  7 world r000 0 -80 200
+:place pmtVol  8 world r000 56.6 -56.6 200

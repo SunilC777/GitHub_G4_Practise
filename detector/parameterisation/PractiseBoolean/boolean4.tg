@@ -1,0 +1,58 @@
+:rotm r000 1 1 1
+
+# ---------------- WORLD ----------------
+
+:solid WorldBox BOX 600 600 600
+:volu worldVol WorldBox G4_AIR
+:vis worldVol OFF
+
+
+# ===================================================
+# 1) SUBTRACTION  (Frame shell)
+# ===================================================
+
+:solid FrameOuter BOX 200 200 200
+:solid FrameInner BOX 160 160 180
+
+:solid Frame SUBTRACTION FrameOuter FrameInner r000 0 0 0
+
+:volu frameVol Frame G4_STAINLESS-STEEL
+:color frameVol 0.7 0.7 0.7
+
+:place frameVol 0 worldVol r000 0 0 0
+
+
+# ===================================================
+# 2) UNION  (Target = cylinder + sphere)
+# ===================================================
+
+:solid TargetTube TUBE 0 40 80
+:solid TargetSphere SPHERE 0 40 0 360 0 180
+
+:solid Target UNION TargetTube TargetSphere r000 0 0 80
+
+:volu targetVol Target G4_Al
+:color targetVol 0.9 0.6 0.2
+
+:place targetVol 0 worldVol r000 0 0 0
+
+
+# ===================================================
+# 3) INTERSECTION  (Detector tile)
+# ===================================================
+
+:solid TileBox BOX 100 50 10
+:solid TileCyl TUBE 0 60 15
+
+:solid Tile INTERSECTION TileBox TileCyl r000 0 0 0
+
+:volu tileVol Tile G4_PLASTIC_SC_VINYLTOLUENE
+:color tileVol 0.2 0.9 0.2
+
+:place tileVol 0 worldVol r000 200 0 0
+:place tileVol 1 worldVol r000 -200 0 0
+:place tileVol 2 worldVol r000 0 200 0
+:place tileVol 3 worldVol r000 0 -200 0
+
+
+

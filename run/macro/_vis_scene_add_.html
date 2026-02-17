@@ -1,0 +1,686 @@
+<html><head><title>Commands in /vis/scene/add/</title></head>
+<style>     table,table td,table th {        border:1px solid #eee     }     table td,table th {       padding:5px 20px;       line-height:1.3;       text-align:inherit     }     a {       color:#17a81a;       text-decoration:none;       transition-duration:0.3s     }       a:hover {       color:#17a81a     }     table {       border-collapse:collapse;       border-spacing:0;       margin-bottom:5px;     }     h1 {       font-size:2.25em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h2 {       font-size:1.5em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h3 {       color:#26282a;       font-weight:300;       font-size:1.3em;       padding:15px 0 15px 0;       border-bottom:2px #eee solid;       word-wrap:break-word     }     .sidebar {       display:block;       position:relative;       position:sticky;       float:left;       -webkit-box-sizing:border-box;       -moz-box-sizing:border-box;       -ms-box-sizing:border-box;       box-sizing:border-box;       width:20%;       padding-right:20px     }     .context {     width:80%;     display:inline-block;     background-color:#fff;     padding: 25px 35px 20px 30px;     -webkit-box-sizing:border-box;     -moz-box-sizing:border-box;     -ms-box-sizing:border-box;     box-sizing:border-box   }     </style>
+<body bgcolor="#ffffff">
+<div class="sidebar"><h2><a href="_vis_scene_.html">Top level </a></h2><table><tr><td><a href="_vis_scene_add_.html">/vis/scene/add/</a></table></div>
+<div class="context"><h1>/vis/scene/add/</h1>
+Add model to current scene.<br>
+<h2>Commands </h2>
+<table>
+<tr><td><a href="#c0">arrow</a></td></tr>
+<tr><td><a href="#c1">arrow2D</a></td></tr>
+<tr><td><a href="#c2">axes</a></td></tr>
+<tr><td><a href="#c3">date</a></td></tr>
+<tr><td><a href="#c4">digis</a></td></tr>
+<tr><td><a href="#c5">electricField</a></td></tr>
+<tr><td><a href="#c6">endOfRunMacro</a></td></tr>
+<tr><td><a href="#c7">eventID</a></td></tr>
+<tr><td><a href="#c8">extent</a></td></tr>
+<tr><td><a href="#c9">frame</a></td></tr>
+<tr><td><a href="#c10">gps</a></td></tr>
+<tr><td><a href="#c11">hits</a></td></tr>
+<tr><td><a href="#c12">line</a></td></tr>
+<tr><td><a href="#c13">line2D</a></td></tr>
+<tr><td><a href="#c14">localAxes</a></td></tr>
+<tr><td><a href="#c15">logicalVolume</a></td></tr>
+<tr><td><a href="#c16">logo</a></td></tr>
+<tr><td><a href="#c17">logo2D</a></td></tr>
+<tr><td><a href="#c18">magneticField</a></td></tr>
+<tr><td><a href="#c19">plotter</a></td></tr>
+<tr><td><a href="#c20">psHits</a></td></tr>
+<tr><td><a href="#c21">scale</a></td></tr>
+<tr><td><a href="#c22">text</a></td></tr>
+<tr><td><a href="#c23">text2D</a></td></tr>
+<tr><td><a href="#c24">trajectories</a></td></tr>
+<tr><td><a href="#c25">userAction</a></td></tr>
+<tr><td><a href="#c26">volume</a></td></tr>
+</table>
+<h3 id="c0">arrow [<i>x1</i>] [<i>y1</i>] [<i>z1</i>] [<i>x2</i>] [<i>y2</i>] [<i>z2</i>] [<i>unit</i>]</h3>
+<p>
+Adds arrow to current scene.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>x1
+<td>type d
+<td><td><tr><td>y1
+<td>type d
+<td><td><tr><td>z1
+<td>type d
+<td><td><tr><td>x2
+<td>type d
+<td><td><tr><td>y2
+<td>type d
+<td><td><tr><td>z2
+<td>type d
+<td><td><tr><td>unit
+<td>type s
+<td>Omittable : default value = m
+<td></table>
+<h3 id="c1">arrow2D [<i>x1</i>] [<i>y1</i>] [<i>x2</i>] [<i>y2</i>]</h3>
+<p>
+Adds 2D arrow to current scene.<br>
+x,y in range [-1,1]<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>x1
+<td>type d
+<td><td><tr><td>y1
+<td>type d
+<td><td><tr><td>x2
+<td>type d
+<td><td><tr><td>y2
+<td>type d
+<td><td></table>
+<h3 id="c2">axes [<i>x0</i>] [<i>y0</i>] [<i>z0</i>] [<i>length</i>] [<i>unit</i>] [<i>colour-string</i>] [<i>showtext</i>]</h3>
+<p>
+Add axes.<br>
+Draws axes at (x0, y0, z0) of given length and colour.<br>
+If "colour-string" is "auto", x, y and z will be red, green and blue
+  respectively.  Otherwise it can be one of the pre-defined text-specified
+  colours - see information printed by the vis manager at start-up or
+  use "/vis/list".<br>
+If "length" is negative, it is set to about 25% of scene extent.<br>
+If "showtext" is false, annotations are suppressed.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>x0
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>y0
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>z0
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>length
+<td>type d
+<td>Omittable : default value = -1
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = m
+<td><tr><td>colour-string
+<td>type s
+<td>Omittable : default value = auto
+<td><tr><td>showtext
+<td>type b
+<td>Omittable : default value = true
+<td></table>
+<h3 id="c3">date [<i>size</i>] [<i>x-position</i>] [<i>y-position</i>] [<i>layout</i>] [<i>date</i>]</h3>
+<p>
+Adds date to current scene.<br>
+If "date"is omitted, the current date and time is drawn.
+Otherwise, the string, including the rest of the line, is drawn.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>size
+<td>type i
+<td>Omittable : default value = 18
+<td><tr><td>x-position
+<td>type d
+<td>Omittable : default value = 0.95
+<td><tr><td>y-position
+<td>type d
+<td>Omittable : default value = 0.9
+<td><tr><td>layout
+<td>type s
+<td>Omittable : default value = right
+<td><tr><td>date
+<td>type s
+<td>Omittable : default value = -
+<td></table>
+<h3 id="c4">digis</h3>
+<p>
+Adds digis to current scene.<br>
+Digis are drawn at end of event when the scene in which
+they are added is current.<br>
+<p>Available at all Geant4 states.
+<h3 id="c5">electricField [<i>nDataPointsPerHalfExtent</i>] [<i>representation</i>]</h3>
+<p>
+Adds electric field representation to current scene.<br>
+The first parameter is no. of data points per half extent.  So, possibly, at
+maximum, the number of data points sampled is (2*n+1)^3, which can grow
+large--be warned!
+The default value is 10, i.e., a 21x21x21 array, i.e., 9,261 sampling points.
+That may swamp your view, but usually, a field is limited to a small part of
+the extent, so it's not a problem. But if it is, here are some of the things
+you can do:
+- reduce the number of data points per half extent (first parameter);
+- specify "lightArrow" (second parameter);
+- restrict the region sampled with "/vis/set/extentForField";
+- restrict the drawing to a specific volume with
+    "/vis/set/volumeForField" or "/vis/touchable/volumeForField".
+Note: you might have to deactivate existing field models with
+  "/vis/scene/activateModel Field false" and re-issue
+  "/vis/scene/add/...Field" command again.<br>
+In the arrow representation, the length of the arrow is proportional
+to the magnitude of the field and the colour is mapped onto the range
+as a fraction of the maximum magnitude: 0-&gt;0.5-&gt;1 is red-&gt;green-&gt;blue.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>nDataPointsPerHalfExtent
+<td>type i
+<td>Omittable : default value = 10
+<td><tr><td>representation
+<td>type s
+<td>Omittable : default value = fullArrow
+<td>Parameter candidates : fullArrow lightArrow
+</table>
+<h3 id="c6">endOfRunMacro [<i>macro</i>]</h3>
+<p>
+Macro is executed at end of run and when rebuild required.<br>
+WARNING: some vis commands in the macro cause recursion.
+  Stick to simple commmands, e.g., which invoke vis manager Draw() methods.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>macro
+<td>type s
+<td><td></table>
+<h3 id="c7">eventID [<i>size</i>] [<i>x-position</i>] [<i>y-position</i>] [<i>layout</i>]</h3>
+<p>
+Adds eventID to current scene.<br>
+Run and event numbers are drawn at end of event or run when
+ the scene in which they are added is current.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>size
+<td>type i
+<td>Omittable : default value = 18
+<td><tr><td>x-position
+<td>type d
+<td>Omittable : default value = -0.95
+<td><tr><td>y-position
+<td>type d
+<td>Omittable : default value = 0.9
+<td><tr><td>layout
+<td>type s
+<td>Omittable : default value = left
+<td></table>
+<h3 id="c8">extent [<i>xmin</i>] [<i>xmax</i>] [<i>ymin</i>] [<i>ymax</i>] [<i>zmin</i>] [<i>zmax</i>] [<i>unit</i>]</h3>
+<p>
+Adds a dummy model with given extent to the current scene.
+Requires the limits: xmin, xmax, ymin, ymax, zmin, zmax unit.
+This can be used to provide an extent to the scene even if
+no other models with extent are available. For example,
+even if there is no geometry.  In that case, for example:
+  /vis/open OGL
+  /vis/scene/create
+  /vis/scene/add/extent -300 300 -300 300 -300 300 cm
+  /vis/sceneHandler/attach<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>xmin
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>xmax
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>ymin
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>ymax
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>zmin
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>zmax
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = m
+<td></table>
+<h3 id="c9">frame [<i>size</i>]</h3>
+<p>
+Add frame to current scene.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>size
+<td>type d
+<td>Omittable : default value = 0.97
+<td>Parameter range : size &gt; 0 &amp;&amp; size &lt;=1
+</table>
+<h3 id="c10">gps [<i>red_or_string</i>] [<i>green</i>] [<i>blue</i>] [<i>opacity</i>]</h3>
+<p>
+A representation of the source(s) of the General Particle Source
+will be added to current scene and drawn, if applicable.<br>
+Accepts (a) RGB triplet. e.g., ".3 .4 .5", or
+ (b) string such as "white", "black", "grey", "red"...or
+ (c) an additional number for opacity, e.g., ".3 .4 .5 .6"
+     or "grey ! ! .6" (note "!"'s for unused parameters).<br>
+Default: red and transparent.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>red_or_string
+<td>type s
+<td>Omittable : default value = 1.
+<td><tr><td>green
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>blue
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>opacity
+<td>type d
+<td>Omittable : default value = 0.3
+<td></table>
+<h3 id="c11">hits</h3>
+<p>
+Adds hits to current scene.<br>
+Hits are drawn at end of event when the scene in which
+they are added is current.<br>
+<p>Available at all Geant4 states.
+<h3 id="c12">line [<i>x1</i>] [<i>y1</i>] [<i>z1</i>] [<i>x2</i>] [<i>y2</i>] [<i>z2</i>] [<i>unit</i>]</h3>
+<p>
+Adds line to current scene.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>x1
+<td>type d
+<td><td><tr><td>y1
+<td>type d
+<td><td><tr><td>z1
+<td>type d
+<td><td><tr><td>x2
+<td>type d
+<td><td><tr><td>y2
+<td>type d
+<td><td><tr><td>z2
+<td>type d
+<td><td><tr><td>unit
+<td>type s
+<td>Omittable : default value = m
+<td></table>
+<h3 id="c13">line2D [<i>x1</i>] [<i>y1</i>] [<i>x2</i>] [<i>y2</i>]</h3>
+<p>
+Adds 2D line to current scene.<br>
+x,y in range [-1,1]<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>x1
+<td>type d
+<td><td><tr><td>y1
+<td>type d
+<td><td><tr><td>x2
+<td>type d
+<td><td><tr><td>y2
+<td>type d
+<td><td></table>
+<h3 id="c14">localAxes [<i>physical-volume-name</i>] [<i>copy-no</i>]</h3>
+<p>
+Adds local axes to physical volume(s).<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>physical-volume-name
+<td>type s
+<td><td><tr><td>copy-no
+<td>type i
+<td>Omittable : default value = -1
+<td></table>
+<h3 id="c15">logicalVolume [<i>logical-volume-name</i>] [<i>depth-of-descent</i>] [<i>booleans-flag</i>] [<i>voxels-flag</i>] [<i>readout-flag</i>] [<i>axes-flag</i>] [<i>check-overlap-flag</i>]</h3>
+<p>
+Adds a logical volume to the current scene,<br>
+Shows boolean components (if any), voxels (if any), readout geometry
+  (if any), local axes and overlaps (if any), under control of the
+  appropriate flag.
+  Note: voxels are not constructed until start of run -
+ "/run/beamOn".  (For voxels without a run, "/run/beamOn 0".)<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>logical-volume-name
+<td>type s
+<td><td><tr><td>depth-of-descent
+<td>type i
+<td>Omittable : default value = 1
+<td><tr><td>booleans-flag
+<td>type b
+<td>Omittable : default value = 1
+<td><tr><td>voxels-flag
+<td>type b
+<td>Omittable : default value = 1
+<td><tr><td>readout-flag
+<td>type b
+<td>Omittable : default value = 1
+<td><tr><td>axes-flag
+<td>type b
+<td>Omittable : default value = 1
+<td><tr><td>check-overlap-flag
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c16">logo [<i>height</i>] [<i>unit</i>] [<i>direction</i>] [<i>red</i>] [<i>green</i>] [<i>blue</i>] [<i>placement</i>] [<i>xmid</i>] [<i>ymid</i>] [<i>zmid</i>] [<i>unit</i>]</h3>
+<p>
+Adds a G4 logo to the current scene.<br>
+If "unit" is "auto", height is roughly one tenth of scene extent.<br>
+"direction" is that of outward-facing normal to front face of logo.
+If "direction" is "auto", logo faces the user in the current viewer.<br>
+
+If "placement" is "auto", logo is placed at bottom right of screen
+  when viewed from logo direction.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>height
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = auto
+<td><tr><td>direction
+<td>type s
+<td>Omittable : default value = auto
+<td><tr><td>red
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>green
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>blue
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>placement
+<td>type s
+<td>Omittable : default value = auto
+<td>Parameter candidates : auto manual
+<tr><td>xmid
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>ymid
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>zmid
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = m
+<td></table>
+<h3 id="c17">logo2D [<i>size</i>] [<i>x-position</i>] [<i>y-position</i>] [<i>layout</i>]</h3>
+<p>
+Adds 2D logo to current scene.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>size
+<td>type i
+<td>Omittable : default value = 48
+<td><tr><td>x-position
+<td>type d
+<td>Omittable : default value = -0.9
+<td><tr><td>y-position
+<td>type d
+<td>Omittable : default value = -0.9
+<td><tr><td>layout
+<td>type s
+<td>Omittable : default value = left
+<td></table>
+<h3 id="c18">magneticField [<i>nDataPointsPerHalfExtent</i>] [<i>representation</i>]</h3>
+<p>
+Adds magnetic field representation to current scene.<br>
+The first parameter is no. of data points per half extent.  So, possibly, at
+maximum, the number of data points sampled is (2*n+1)^3, which can grow
+large--be warned!
+The default value is 10, i.e., a 21x21x21 array, i.e., 9,261 sampling points.
+That may swamp your view, but usually, a field is limited to a small part of
+the extent, so it's not a problem. But if it is, here are some of the things
+you can do:
+- reduce the number of data points per half extent (first parameter);
+- specify "lightArrow" (second parameter);
+- restrict the region sampled with "/vis/set/extentForField";
+- restrict the drawing to a specific volume with
+    "/vis/set/volumeForField" or "/vis/touchable/volumeForField".
+Note: you might have to deactivate existing field models with
+  "/vis/scene/activateModel Field false" and re-issue
+  "/vis/scene/add/...Field" command again.<br>
+In the arrow representation, the length of the arrow is proportional
+to the magnitude of the field and the colour is mapped onto the range
+as a fraction of the maximum magnitude: 0-&gt;0.5-&gt;1 is red-&gt;green-&gt;blue.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>nDataPointsPerHalfExtent
+<td>type i
+<td>Omittable : default value = 10
+<td><tr><td>representation
+<td>type s
+<td>Omittable : default value = fullArrow
+<td>Parameter candidates : fullArrow lightArrow
+</table>
+<h3 id="c19">plotter [<i>plotter</i>]</h3>
+<p>
+Add a plotter to current scene.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>plotter
+<td>type s
+<td><td></table>
+<h3 id="c20">psHits [<i>mapname</i>]</h3>
+<p>
+Adds Primitive Scorer Hits (PSHits) to current scene.<br>
+PSHits are drawn at end of run when the scene in which
+they are added is current.<br>
+Optional parameter specifies name of scoring map.  By default all
+scoring maps registered with the G4ScoringManager are drawn.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>mapname
+<td>type s
+<td>Omittable : default value = all
+<td></table>
+<h3 id="c21">scale [<i>length</i>] [<i>unit</i>] [<i>direction</i>] [<i>red</i>] [<i>green</i>] [<i>blue</i>] [<i>placement</i>] [<i>xmid</i>] [<i>ymid</i>] [<i>zmid</i>] [<i>unit</i>]</h3>
+<p>
+Adds an annotated scale line to the current scene.<br>
+If "unit" is "auto", length is roughly one tenth of the scene extent.<br>
+If "direction" is "auto", scale is roughly in the plane of the current view.<br>
+If "placement" is "auto", scale is placed at bottom left of current view.
+  Otherwise placed at (xmid,ymid,zmid).<br>
+An annotated line in the specified direction with tick marks at the
+end.  If autoPlacing is true it is required to be centred at the
+front, right, bottom corner of the world space, comfortably outside
+the existing bounding box/sphere so that existing objects do not
+obscure it.  Otherwise it is required to be drawn with mid-point at
+(xmid, ymid, zmid).
+
+The auto placing algorithm is (approx):
+  x = xmin + (1 + comfort) * (xmax - xmin);
+  y = ymin - comfort * (ymax - ymin);
+  z = zmin + (1 + comfort) * (zmax - zmin);
+  if direction == x then (x - length,y,z) to (x,y,z);
+  if direction == y then (x,y,z) to (x,y + length,z);
+  if direction == z then (x,y,z - length) to (x,y,z);<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>length
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = auto
+<td><tr><td>direction
+<td>type s
+<td>Omittable : default value = auto
+<td><tr><td>red
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>green
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>blue
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>placement
+<td>type s
+<td>Omittable : default value = auto
+<td>Parameter candidates : auto manual
+<tr><td>xmid
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>ymid
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>zmid
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = m
+<td></table>
+<h3 id="c22">text [<i>x</i>] [<i>y</i>] [<i>z</i>] [<i>unit</i>] [<i>font_size</i>] [<i>x_offset</i>] [<i>y_offset</i>] [<i>text</i>]</h3>
+<p>
+Adds text to current scene.<br>
+Use "/vis/set/textColour" to set colour.<br>
+Use "/vis/set/textLayout" to set layout:<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>x
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>y
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>z
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>unit
+<td>type s
+<td>Omittable : default value = m
+<td><tr><td>font_size
+<td>type d
+<td>Omittable : default value = 12
+<td><tr><td>x_offset
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>y_offset
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>text
+<td>type s
+<td>Omittable : default value = Hello G4
+<td></table>
+<h3 id="c23">text2D [<i>x</i>] [<i>y</i>] [<i>font_size</i>] [<i>x_offset</i>] [<i>y_offset</i>] [<i>text</i>]</h3>
+<p>
+Adds 2D text to current scene.<br>
+x,y in range [-1,1]<br>
+Use "/vis/set/textColour" to set colour.<br>
+Use "/vis/set/textLayout" to set layout:<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>x
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>y
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>font_size
+<td>type d
+<td>Omittable : default value = 12
+<td><tr><td>x_offset
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>y_offset
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>text
+<td>type s
+<td>Omittable : default value = Hello G4
+<td></table>
+<h3 id="c24">trajectories [<i>default-trajectory-type</i>]</h3>
+<p>
+Adds trajectories to current scene.<br>
+Causes trajectories, if any, to be drawn at the end of processing an
+event.  Switches on trajectory storing and sets the
+default trajectory type.<br>
+The command line parameter list determines the default trajectory type.
+If it contains the string "smooth", auxiliary inter-step points will
+be inserted to improve the smoothness of the drawing of a curved
+trajectory.
+If it contains the string "rich", significant extra information will
+be stored in the trajectory (G4RichTrajectory) amenable to modeling
+and filtering with "/vis/modeling/trajectories/create/drawByAttribute"
+and "/vis/filtering/trajectories/create/attributeFilter" commands.
+It may contain both strings in any order.<br>
+
+To switch off trajectory storing: "/tracking/storeTrajectory 0".
+See also "/vis/scene/endOfEventAction".<br>
+Note:  This only sets the default.  Independently of the result of this
+command, a user may instantiate a trajectory that overrides this default
+in PreUserTrackingAction.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>default-trajectory-type
+<td>type s
+<td>Omittable : default value = 
+<td></table>
+<h3 id="c25">userAction [<i>action-name</i>]</h3>
+<p>
+Add named Vis User Action to current scene.<br>
+Attempts to match search string to name of action - use unique sub-string.<br>
+(Use /vis/list to see names of registered actions.)<br>
+If name == "all" (default), all actions are added.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>action-name
+<td>type s
+<td>Omittable : default value = all
+<td></table>
+<h3 id="c26">volume [<i>physical-volume-name</i>] [<i>copy-no</i>] [<i>depth-of-descent</i>] [<i>clip-volume-type</i>] [<i>parameter-unit</i>] [<i>parameter-1</i>] [<i>parameter-2</i>] [<i>parameter-3</i>] [<i>parameter-4</i>] [<i>parameter-5</i>] [<i>parameter-6</i>]</h3>
+<p>
+Adds a physical volume to current scene, with optional clipping volume.<br>
+If physical-volume-name is "world" (the default), the top of the
+main geometry tree (material world) is added. If "worlds", the
+tops of all worlds - material world and parallel worlds, if any - are
+added. Otherwise a search of all worlds is made.<br>
+In the last case the names of all volumes in all worlds are matched
+against physical-volume-name. If this is of the form "/regexp/",
+where regexp is a regular expression (see C++ regex), the match uses
+the usual rules of regular expression matching. Otherwise an exact
+match is required.
+For example, "/Shap/" adds "Shape1" and "Shape2".<br>
+It may help to see a textual representation of the geometry hierarchy of
+the worlds. Try "/vis/drawTree [worlds]".<br>
+If clip-volume-type is specified, the subsequent parameters are used to
+to define a clipping volume. For example,
+"/vis/scene/add/volume ! ! ! -box km 0 1 0 1 0 1" will draw the world
+with the positive octant cut away. (If the Boolean Processor issues
+warnings try replacing 0 by 0.000000001 or something.)<br>
+If clip-volume-type is prepended with '-', the clip-volume is subtracted
+(cutaway). (This is the default if there is no prepended character.)
+If '*' is prepended, the intersection of the physical-volume and the
+clip-volume is made. (You can make a section through the detector with
+a thin box, for example).<br>
+For "box", the parameters are xmin,xmax,ymin,ymax,zmin,zmax.
+Only "box" is programmed at present.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>physical-volume-name
+<td>type s
+<td>Omittable : default value = world
+<td><tr><td>copy-no
+<td>type i
+<td>Omittable : default value = -1
+<td><tr><td>depth-of-descent
+<td>type i
+<td>Omittable : default value = -1
+<td><tr><td>clip-volume-type
+<td>type s
+<td>Omittable : default value = none
+<td>Parameter candidates : none box -box *box
+<tr><td>parameter-unit
+<td>type s
+<td>Omittable : default value = m
+<td><tr><td>parameter-1
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>parameter-2
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>parameter-3
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>parameter-4
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>parameter-5
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>parameter-6
+<td>type d
+<td>Omittable : default value = 0
+<td></table>
+</div></body></html>

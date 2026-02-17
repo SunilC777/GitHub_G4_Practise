@@ -1,0 +1,19 @@
+:volu world BOX 50*mm 50*mm 50*mm G4_AIR
+
+:vis world OFF
+
+ 
+
+:volu water BOX 25*mm 50*mm 50*mm G4_WATER
+
+   
+
+:color water 0.2 0.4 0.8
+
+ 
+
+:rotm r000 0 0 0
+
+ 
+
+:place water 1 world r000 0 0 0

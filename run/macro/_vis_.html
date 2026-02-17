@@ -1,0 +1,353 @@
+<html><head><title>Commands in /vis/</title></head>
+<style>     table,table td,table th {        border:1px solid #eee     }     table td,table th {       padding:5px 20px;       line-height:1.3;       text-align:inherit     }     a {       color:#17a81a;       text-decoration:none;       transition-duration:0.3s     }       a:hover {       color:#17a81a     }     table {       border-collapse:collapse;       border-spacing:0;       margin-bottom:5px;     }     h1 {       font-size:2.25em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h2 {       font-size:1.5em;       font-weight:300;       letter-spacing:-1px;       line-height:1.15em;       margin-bottom:0.5em;       word-wrap:break-word     }     h3 {       color:#26282a;       font-weight:300;       font-size:1.3em;       padding:15px 0 15px 0;       border-bottom:2px #eee solid;       word-wrap:break-word     }     .sidebar {       display:block;       position:relative;       position:sticky;       float:left;       -webkit-box-sizing:border-box;       -moz-box-sizing:border-box;       -ms-box-sizing:border-box;       box-sizing:border-box;       width:20%;       padding-right:20px     }     .context {     width:80%;     display:inline-block;     background-color:#fff;     padding: 25px 35px 20px 30px;     -webkit-box-sizing:border-box;     -moz-box-sizing:border-box;     -ms-box-sizing:border-box;     box-sizing:border-box   }     </style>
+<body bgcolor="#ffffff">
+<div class="sidebar"><h2><a href="_.html">Top level </a></h2><table><tr><td><a href="_control_.html">/control/</a><tr><td><a href="_units_.html">/units/</a><tr><td><a href="_analysis_.html">/analysis/</a><tr><td><a href="_particle_.html">/particle/</a><tr><td><a href="_tracking_.html">/tracking/</a><tr><td><a href="_geometry_.html">/geometry/</a><tr><td><a href="_process_.html">/process/</a><tr><td><a href="_event_.html">/event/</a><tr><td><a href="_cuts_.html">/cuts/</a><tr><td><a href="_run_.html">/run/</a><tr><td><a href="_random_.html">/random/</a><tr><td><a href="_material_.html">/material/</a><tr><td><a href="_physics_lists_.html">/physics_lists/</a><tr><td><a href="_gps_.html">/gps/</a><tr><td><a href="_grdm_.html">/grdm/</a><tr><td><a href="_score_.html">/score/</a><tr><td><a href="_vis_.html">/vis/</a></table></div>
+<div class="context"><h1>/vis/</h1>
+Visualization commands.<br>
+<h2>Sub-directories </h2><table><tr><td><a href="_vis_ASCIITree_.html">/vis/ASCIITree/</a></td><td>Commands for ASCIITree control.</tr><tr><td><a href="_vis_filtering_.html">/vis/filtering/</a></td><td>Filtering commands.</tr><tr><td><a href="_vis_gMocren_.html">/vis/gMocren/</a></td><td>gMocren commands.</tr><tr><td><a href="_vis_geometry_.html">/vis/geometry/</a></td><td>Operations on vis attributes of Geant4 geometry.</tr><tr><td><a href="_vis_modeling_.html">/vis/modeling/</a></td><td>Modeling commands.</tr><tr><td><a href="_vis_multithreading_.html">/vis/multithreading/</a></td><td>Commands unique to multithreading mode.</tr><tr><td><a href="_vis_ogl_.html">/vis/ogl/</a></td><td>G4OpenGLViewer commands.</tr><tr><td><a href="_vis_plotter_.html">/vis/plotter/</a></td><td>...Title not available...</tr><tr><td><a href="_vis_scene_.html">/vis/scene/</a></td><td>Operations on Geant4 scenes.</tr><tr><td><a href="_vis_sceneHandler_.html">/vis/sceneHandler/</a></td><td>Operations on Geant4 scene handlers.</tr><tr><td><a href="_vis_set_.html">/vis/set/</a></td><td>Set quantities for use in future commands where appropriate.</tr><tr><td><a href="_vis_touchable_.html">/vis/touchable/</a></td><td>Operations on touchables.</tr><tr><td><a href="_vis_viewer_.html">/vis/viewer/</a></td><td>Operations on Geant4 viewers.</tr></table>
+<h2>Commands </h2>
+<table>
+<tr><td><a href="#c0">abortReviewKeptEvents</a></td></tr>
+<tr><td><a href="#c1">abortReviewPlots</a></td></tr>
+<tr><td><a href="#c2">disable</a></td></tr>
+<tr><td><a href="#c3">drawLogicalVolume</a></td></tr>
+<tr><td><a href="#c4">drawOnlyToBeKeptEvents</a></td></tr>
+<tr><td><a href="#c5">drawTree</a></td></tr>
+<tr><td><a href="#c6">drawView</a></td></tr>
+<tr><td><a href="#c7">drawVolume</a></td></tr>
+<tr><td><a href="#c8">enable</a></td></tr>
+<tr><td><a href="#c9">initialize</a></td></tr>
+<tr><td><a href="#c10">list</a></td></tr>
+<tr><td><a href="#c11">open</a></td></tr>
+<tr><td><a href="#c12">plot</a></td></tr>
+<tr><td><a href="#c13">reviewKeptEvents</a></td></tr>
+<tr><td><a href="#c14">reviewPlots</a></td></tr>
+<tr><td><a href="#c15">specify</a></td></tr>
+<tr><td><a href="#c16">verbose</a></td></tr>
+</table>
+<h3 id="c0">abortReviewKeptEvents [<i>abort</i>]</h3>
+<p>
+Abort review of kept events.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>abort
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c1">abortReviewPlots [<i>abort</i>]</h3>
+<p>
+Abort review of plots.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>abort
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c2">disable</h3>
+<p>
+Disables visualization system.<br>
+<p>Available at all Geant4 states.
+<h3 id="c3">drawLogicalVolume [<i>logical-volume-name</i>] [<i>depth-of-descent</i>] [<i>booleans-flag</i>] [<i>voxels-flag</i>] [<i>readout-flag</i>] [<i>axes-flag</i>] [<i>check-overlap-flag</i>]</h3>
+<p>
+Draws logical volume with additional components.<br>
+Synonymous with "/vis/specify".<br>
+Creates a scene consisting of this logical volume and asks the
+  current viewer to draw it. The scene becomes current.<br>
+Adds a logical volume to the current scene,<br>
+Shows boolean components (if any), voxels (if any), readout geometry
+  (if any), local axes and overlaps (if any), under control of the
+  appropriate flag.
+  Note: voxels are not constructed until start of run -
+ "/run/beamOn".  (For voxels without a run, "/run/beamOn 0".)<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>logical-volume-name
+<td>type s
+<td><td><tr><td>depth-of-descent
+<td>type i
+<td>Omittable : default value = 1
+<td><tr><td>booleans-flag
+<td>type b
+<td>Omittable : default value = 1
+<td><tr><td>voxels-flag
+<td>type b
+<td>Omittable : default value = 1
+<td><tr><td>readout-flag
+<td>type b
+<td>Omittable : default value = 1
+<td><tr><td>axes-flag
+<td>type b
+<td>Omittable : default value = 1
+<td><tr><td>check-overlap-flag
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c4">drawOnlyToBeKeptEvents [<i>draw</i>]</h3>
+<p>
+DURING A RUN draw only those events that have been "to be kept" by the user
+with G4EventManager::GetEventManager()-&gt;KeepTheCurrentEvent() or
+with "/event/keepCurrentEvent".<br>
+To draw selected events the user should set this flag, then in a user action:
+  if ( some criterion ) {
+    G4EventManager::GetEventManager()-&gt;KeepTheCurrentEvent();
+  }<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>draw
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c5">drawTree [<i>physical-volume-name</i>] [<i>system</i>]</h3>
+<p>
+Produces a representation of the geometry hierarchy. Further
+guidance is given on running the command. Or look at the guidance
+for "/vis/ASCIITree/verbose".<br>
+The pre-existing scene and view are preserved.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>physical-volume-name
+<td>type s
+<td>Omittable : default value = world
+<td><tr><td>system
+<td>type s
+<td>Omittable : default value = ATree
+<td></table>
+<h3 id="c6">drawView [<i>theta-degrees</i>] [<i>phi-degrees</i>] [<i>pan-right</i>] [<i>pan-up</i>] [<i>pan-unit</i>] [<i>zoom-factor</i>] [<i>dolly</i>] [<i>dolly-unit</i>]</h3>
+<p>
+Draw view from this angle, etc.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>theta-degrees
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>phi-degrees
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>pan-right
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>pan-up
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>pan-unit
+<td>type s
+<td>Omittable : default value = cm
+<td><tr><td>zoom-factor
+<td>type d
+<td>Omittable : default value = 1
+<td><tr><td>dolly
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>dolly-unit
+<td>type s
+<td>Omittable : default value = cm
+<td></table>
+<h3 id="c7">drawVolume [<i>physical-volume-name</i>] [<i>copy-no</i>] [<i>depth-of-descent</i>] [<i>clip-volume-type</i>] [<i>parameter-unit</i>] [<i>parameter-1</i>] [<i>parameter-2</i>] [<i>parameter-3</i>] [<i>parameter-4</i>] [<i>parameter-5</i>] [<i>parameter-6</i>]</h3>
+<p>
+Creates a scene containing this physical volume and asks the
+current viewer to draw it.  The scene becomes current.<br>
+Adds a physical volume to current scene, with optional clipping volume.<br>
+If physical-volume-name is "world" (the default), the top of the
+main geometry tree (material world) is added. If "worlds", the
+tops of all worlds - material world and parallel worlds, if any - are
+added. Otherwise a search of all worlds is made.<br>
+In the last case the names of all volumes in all worlds are matched
+against physical-volume-name. If this is of the form "/regexp/",
+where regexp is a regular expression (see C++ regex), the match uses
+the usual rules of regular expression matching. Otherwise an exact
+match is required.
+For example, "/Shap/" adds "Shape1" and "Shape2".<br>
+It may help to see a textual representation of the geometry hierarchy of
+the worlds. Try "/vis/drawTree [worlds]".<br>
+If clip-volume-type is specified, the subsequent parameters are used to
+to define a clipping volume. For example,
+"/vis/scene/add/volume ! ! ! -box km 0 1 0 1 0 1" will draw the world
+with the positive octant cut away. (If the Boolean Processor issues
+warnings try replacing 0 by 0.000000001 or something.)<br>
+If clip-volume-type is prepended with '-', the clip-volume is subtracted
+(cutaway). (This is the default if there is no prepended character.)
+If '*' is prepended, the intersection of the physical-volume and the
+clip-volume is made. (You can make a section through the detector with
+a thin box, for example).<br>
+For "box", the parameters are xmin,xmax,ymin,ymax,zmin,zmax.
+Only "box" is programmed at present.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>physical-volume-name
+<td>type s
+<td>Omittable : default value = world
+<td><tr><td>copy-no
+<td>type i
+<td>Omittable : default value = -1
+<td><tr><td>depth-of-descent
+<td>type i
+<td>Omittable : default value = -1
+<td><tr><td>clip-volume-type
+<td>type s
+<td>Omittable : default value = none
+<td>Parameter candidates : none box -box *box
+<tr><td>parameter-unit
+<td>type s
+<td>Omittable : default value = m
+<td><tr><td>parameter-1
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>parameter-2
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>parameter-3
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>parameter-4
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>parameter-5
+<td>type d
+<td>Omittable : default value = 0
+<td><tr><td>parameter-6
+<td>type d
+<td>Omittable : default value = 0
+<td></table>
+<h3 id="c8">enable [<i>enabled</i>]</h3>
+<p>
+Enables/disables visualization system.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>enabled
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c9">initialize</h3>
+<p>
+Initialise visualisation manager.<br>
+<p>Available at all Geant4 states.
+<h3 id="c10">list [<i>verbosity</i>]</h3>
+<p>
+Lists visualization parameters.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>verbosity
+<td>type s
+<td>Omittable : default value = warnings
+<td></table>
+<h3 id="c11">open [<i>graphics-system-name</i>] [<i>window-size-hint</i>]</h3>
+<p>
+Creates a scene handler and viewer ready for drawing.<br>
+The scene handler and viewer names are auto-generated.<br>
+The scene handler and viewer become current.<br>
+(Note: the system adds the graphics system name to the viewer name
+for identification, but for selecting, copying, etc., only characters
+up to the first blank are used. For example, if the viewer name is
+"viewer-0 (G4OpenGLStoredQt)", it may be referenced by "viewer-0",
+for example in "/vis/viewer/select viewer-0".)<br>
+Window size and placement hints, e.g. 600x600-100+100 (in pixels):<br>
+- single number, e.g., "600": square window;<br>
+- two numbers, e.g., "800x600": rectangluar window;<br>
+- two numbers plus placement hint, e.g., "600x600-100+100" places window of size
+  600x600 100 pixels left and 100 pixels down from top right corner.<br>
+- If not specified, the default is "600", i.e., 600 pixels square, placed
+  at the window manager's discretion...or picked up from the previous viewer.<br>
+- This is an X-Windows-type geometry string, see:
+  https://en.wikibooks.org/wiki/Guide_to_X11/Starting_Programs,
+  "Specifying window geometry".<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>graphics-system-name
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td><tr><td>window-size-hint
+<td>type s
+<td>Omittable : current value is used as the default value.
+<td></table>
+<h3 id="c12">plot [<i>type</i>] [<i>id</i>]</h3>
+<p>
+Draws plots.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>type
+<td>type s
+<td><td>Parameter candidates : h1 h2
+<tr><td>id
+<td>type i
+<td><td></table>
+<h3 id="c13">reviewKeptEvents [<i>macro-file-name</i>]</h3>
+<p>
+Review kept events.<br>
+If a macro file is specified, it is executed for each event.<br>
+If a macro file is not specified, each event is drawn to the current
+viewer.  After each event, the session is paused.  The user may issue
+any allowed command.  Then enter "cont[inue]" to continue to the next
+event.
+Useful commands might be:
+  "/vis/viewer/..." to change the view (zoom, set/viewpoint,...).
+  "/vis/ogl/export" to get hard copy.
+  "/vis/open" to get alternative viewer.
+  "/vis/abortReviewKeptEvents", then "cont[inue]", to abort.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>macro-file-name
+<td>type s
+<td>Omittable : default value = 
+<td></table>
+<h3 id="c14">reviewPlots</h3>
+<p>
+Review plots.<br>
+Each plot is drawn, one by one, to the current viewer.  After each
+plot the session is paused.  The user may issue any allowed command.
+Then enter "cont[inue]" to continue to the next plot.
+Useful commands might be:
+  "/vis/tsg/export" to get hard copy.
+  "/vis/abortReviewPlots", then "cont[inue]", to abort.<br>
+<p>Available at all Geant4 states.
+<h3 id="c15">specify [<i>logical-volume-name</i>] [<i>depth-of-descent</i>] [<i>booleans-flag</i>] [<i>voxels-flag</i>] [<i>readout-flag</i>] [<i>axes-flag</i>] [<i>check-overlap-flag</i>]</h3>
+<p>
+Draws logical volume with Boolean components, voxels and readout geometry.<br>
+Synonymous with "/vis/drawLogicalVolume".<br>
+Creates a scene consisting of this logical volume and asks the
+  current viewer to draw it to the specified depth of descent
+  showing boolean components (if any), voxels (if any),
+  readout geometry (if any), local axes and overlaps (if any),
+  under control of the appropriate flag.<br>
+Note: voxels are not constructed until start of run - /run/beamOn.
+  (For voxels without a run, "/run/beamOn 0".)<br>
+The scene becomes current.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>logical-volume-name
+<td>type s
+<td><td><tr><td>depth-of-descent
+<td>type i
+<td>Omittable : default value = 1
+<td><tr><td>booleans-flag
+<td>type b
+<td>Omittable : default value = 1
+<td><tr><td>voxels-flag
+<td>type b
+<td>Omittable : default value = 1
+<td><tr><td>readout-flag
+<td>type b
+<td>Omittable : default value = 1
+<td><tr><td>axes-flag
+<td>type b
+<td>Omittable : default value = 1
+<td><tr><td>check-overlap-flag
+<td>type b
+<td>Omittable : default value = 1
+<td></table>
+<h3 id="c16">verbose [<i>verbosity</i>]</h3>
+<p>
+Simple graded message scheme - digit or string (1st character defines):<br>
+  0) quiet,         // Nothing is printed.<br>
+  1) startup,       // Startup and endup messages are printed...<br>
+  2) errors,        // ...and errors...<br>
+  3) warnings,      // ...and warnings...<br>
+  4) confirmations, // ...and confirming messages...<br>
+  5) parameters,    // ...and parameters of scenes and views...<br>
+  6) all            // ...and everything available.<br>
+<p>Available at all Geant4 states.
+<p>Parameters<table border=1>
+<tr><td>verbosity
+<td>type s
+<td>Omittable : default value = 
+<td></table>
+</div></body></html>
