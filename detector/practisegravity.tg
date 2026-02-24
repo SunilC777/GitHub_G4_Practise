@@ -1,0 +1,21 @@
+// text geometry 
+
+:mate Air G4_AIR
+:mate Ge  G4_Ge
+
+:p world 400*mm
+:p radius 30*mm
+:p height 60*mm
+
+:rotm r000 0 0 0
+
+:solid WorldBox BOX $world $world $world
+:solid Detector TUBE 0*mm $radius $height
+
+:volu worldVol WorldBox Air
+:vis worldVol OFF
+
+:volu detVol Detector Ge
+:color detVol blue
+
+:place detVol 0 worldVol r000 0 0 0
